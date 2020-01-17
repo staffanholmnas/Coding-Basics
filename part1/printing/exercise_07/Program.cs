@@ -8,7 +8,13 @@ namespace exercise_07
         {
             Console.WriteLine("Give input!");
             // Write your code here:
-            
+
+            // This code stores the input in a variable called message.
+            string message = Console.ReadLine();
+
+            // Prints out what you wrote 3 times with a line change after each one except the last. 
+            Console.WriteLine(message + "\n" + message
+            + "\n" + message);
         }
     }
 }
