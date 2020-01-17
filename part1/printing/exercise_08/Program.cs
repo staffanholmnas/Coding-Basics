@@ -15,7 +15,7 @@ namespace exercise_08
             string name = Console.ReadLine();
 
             /* The following prints out a greeting along with whatever text you entered
-            followed by an exclamation mark */
+            followed by an exclamation mark. */
             Console.WriteLine("Hello " + name + "!");
         }
     }

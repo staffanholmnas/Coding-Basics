@@ -12,7 +12,7 @@ namespace exercise_07
             // This code stores the input in a variable called message.
             string message = Console.ReadLine();
 
-            // Prints out what you wrote 3 times with a line change after each one except the last. 
+            // Prints out what you wrote 3 times with a line change after each one (except the last). 
             Console.WriteLine(message + "\n" + message
             + "\n" + message);
         }
