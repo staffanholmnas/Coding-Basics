@@ -8,7 +8,7 @@ namespace exercise_02
         {
             // Your code here:
 
-            // This code prints a fine piece of lyric from 
+            // This code prints a piece of lyric from 
             // Bonnie Tylers song "Total eclipse of the heart".
             Console.WriteLine("Once upon a time");
             Console.WriteLine("I was falling in love");

@@ -8,7 +8,7 @@ namespace exercise_08
         {
             // Write your code here:
 
-            // This statement prints out that you should enter you name.
+            // This statement prints out that you should enter your name.
             Console.WriteLine("What is your name?");
 
             // The text you entered will be stored as a string in a variable called name.

@@ -8,6 +8,7 @@ namespace exercise_01
         {
             // Add your code here:
             
+            // Prints a string.
             Console.WriteLine("Hello World!");
         }
     }

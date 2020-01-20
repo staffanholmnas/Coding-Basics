@@ -6,13 +6,10 @@ namespace exercise_05
     {
         public static void Main(string[] args)
         {
-            string name = "Ada Lovelace";
+            
             // Write your code here:
-
-            // I am not allowed to modify the content of the first variable
-            // but surely I can change the variable.
-            name = "Ada LoveLace";
-
+            string name = "Ada Lovelace";
+            
             // Prints out to the console a greeting
             // followed by the variable name and an 
             // exclamation mark.
