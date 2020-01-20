@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_16;
+using exercise_31;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise16Test2()
+    public void TestExercise31Test1()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -22,7 +22,7 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "2"
+                "18"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -34,23 +34,23 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        Assert.AreEqual("How many days?\n172800\n", sw.ToString().Replace("\r\n", "\n"), "There are 86400 seconds in a day!");
+        Assert.AreEqual("Give a number:\nIt is even.\n", sw.ToString().Replace("\r\n", "\n"), "Check your if-clause is correct!");
       }
     }
-
     [Test]
-    public void TestExercise16Test11()
+    public void TestExercise31Test2()
     {
       using (StringWriter sw = new StringWriter())
       {
-        int days = 11*86400;
+        // Save a reference to the standard output.
         TextWriter stdout = Console.Out;
 
+        // Redirect standard output to variable.
         Console.SetOut(sw);
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "11"
+                "17"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -62,8 +62,9 @@ namespace ProgramTests
         Console.SetOut(stdout);
 
         // Assert
-        Assert.AreEqual("How many days?\n"+days+"\n", sw.ToString().Replace("\r\n", "\n"), "There are 86400 seconds in a day!");
+        Assert.AreEqual("Give a number:\nIt is odd.\n", sw.ToString().Replace("\r\n", "\n"), "Check your if-clause is correct!");
       }
     }
+
   }
 }

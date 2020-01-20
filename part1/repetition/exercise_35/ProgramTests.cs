@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_16;
+using exercise_35;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise16Test2()
+    public void TestExercise35Test1()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -22,7 +22,11 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "2"
+                "41",
+                "45",
+                "11",
+                "69",
+                "42"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -32,25 +36,29 @@ namespace ProgramTests
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-
+        string comparison = "";
+        for (int i = 0; i < 5; i++) {
+          comparison = comparison + "Give a number:\n";
+        }
         // Assert
-        Assert.AreEqual("How many days?\n172800\n", sw.ToString().Replace("\r\n", "\n"), "There are 86400 seconds in a day!");
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Are you looping?");
       }
     }
 
     [Test]
-    public void TestExercise16Test11()
+    public void TestExercise35Test4()
     {
       using (StringWriter sw = new StringWriter())
       {
-        int days = 11*86400;
+        // Save a reference to the standard output.
         TextWriter stdout = Console.Out;
 
+        // Redirect standard output to variable.
         Console.SetOut(sw);
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "11"
+                "42"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -60,10 +68,13 @@ namespace ProgramTests
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-
+        string comparison = "Give a number:\n";
+        
         // Assert
-        Assert.AreEqual("How many days?\n"+days+"\n", sw.ToString().Replace("\r\n", "\n"), "There are 86400 seconds in a day!");
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Do not loop anymore if number is 42!");
       }
     }
+
+
   }
 }

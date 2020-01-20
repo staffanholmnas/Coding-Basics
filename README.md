@@ -174,13 +174,13 @@ It sure is!
 * Create a program, that asks the user for an integer. After user input, the program will print the integer. Example prints:
 
 ```console
-Give a number
+Give a number!
 > 11
 You gave 11
 ```
 
 ```console
-Give a number
+Give a number!
 > 42
 You gave 42
 ```
@@ -434,3 +434,265 @@ Give a number:
 -2
 It is not positive
 ```
+
+### Exercise_28
+
+Create a program which tell if the given person is legally adult (in Finland, over 18), or not.
+
+```console
+How old are you?
+> 5
+You're under age!
+```
+
+```console
+How old are you?
+> 18
+You're an adult!
+```
+
+### Exercise_29
+
+Create a program which asks for two integers. The program should tell which of them is greater. If they are equal, that should be noted, too.
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 2
+The larger number is 3!
+```
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 4
+The larger number is 4!
+```
+
+```console
+Give the first number!
+> 3
+Give the second number!
+> 2
+They are equal!
+```
+
+#### Exercise_30
+
+Here is the grading for this course:
+
+| Percent | Grade|
+|---|---|
+| < 0 | Impossible |
+| 0 - 49  | Fail |
+| 50 - 59 | 1 |
+| 60 - 69 | 2 |
+| 70 - 79 | 3 |
+| 80 - 89 | 4 |
+| 90 - 100 | 5 |
+| > 100 | Outstanding! |
+
+Create a program, which asks the user for their percent, and gives them their score. For example:
+
+```console
+Give your percent [0 - 100]:
+> -2
+Impossible
+```
+
+```console
+Give your percent [0 - 100]:
+> 49
+Fail
+```
+
+```console
+Give your percent [0 - 100]:
+> 75
+Grade: 3
+```
+
+```console
+Give your percent [0 - 100]:
+> 99
+Grade: 5
+```
+
+```console
+Give your percent [0 - 100]:
+> 9001
+Grade: Outstanding!
+```
+
+#### Exercise_31
+
+Create a program which asks for an integer and tells the user if it is even or not.
+
+```console
+Give a number:
+> 2
+It is even
+```
+
+````console
+Give a number
+> 5
+It is odd
+````
+
+Hint: You might want to use the **%** operator to get the remainder after a division with 2.
+
+#### Exercise_32
+
+Create a program which asks for a string. If the string is "Mellon", print "Welcome, friend", otherwise print "They've got a cave troll!"
+
+```console
+Speak, friend, and enter!
+> Let meeeee in!
+They've got a cave troll!
+```
+
+```console
+Speak, friend, and enter!
+> Mellon
+Welcome, friend
+```
+
+#### Exercise_33
+
+Create a program which asks for two string. If the strings are equal, print "Echo", otherwise print "Nope".
+
+```console
+Give the first string:
+> Potato
+Give the second string:
+> Potato
+Echo!
+```
+
+```console
+Give the first string:
+> Potato
+Give the second string:
+> Tomato
+Nope!
+```
+
+## Repetition
+
+#### Exercise_34
+
+Create a program which asks the user if they want to continue. If the user answers "no", then quit the program. Otherwise, ask again.
+
+Hint: Use a while-loop!
+
+```console
+Do you want to continue?
+> Yes
+Do you want to continue?
+> Hot potato
+Do you want to continue?
+> no
+```
+
+#### Exercise_35
+
+Create a program, which asks the user for integers, until the user give the number "42".
+
+```console
+Give a number:
+> 41
+Give a number:
+> 68
+Give a number:
+-42
+Give a number:
+42
+```
+
+#### Exercise_36
+
+Create a program, which asks the user for integers. If the number is zero, exit the program. If the number is negative, give the user message "That is negative". If the number is positive, output the number, raised to its second power (the number multiplied with itself).
+
+```console
+Give a number:
+> 5
+25
+Give a number:
+> -2
+That is negative
+Give a number:
+> 4
+16
+Give a number:
+0
+```
+
+#### Exercise_37
+
+Create a program which asks the user for integers. If the integer is 0, quit. In the end, output "Total amount of numbers:" and the amount. Do not count the 0 into the amount.
+
+```console
+Give a number:
+> 5
+Give a number:
+> -2
+Give a number:
+> 22
+Give a number:
+> 0
+Total amount of numbers: 3
+```
+
+#### Exercise_38
+
+Create a program which asks the user for integers. If the integer is 0, quit. In the end, output the total amount of **negative numbers** with "Total amount of negative numbers:" and the amount. Do not count the 0 into the amount.
+
+```console
+Give a number:
+> 5
+Give a number:
+> -2
+Give a number:
+> 22
+Give a number:
+> 0
+Total amount of negative numbers: 1
+```
+
+#### Exercise_39
+
+Create a program which asks the user for integers. If the integer is 0, quit. In the end, output the total **sum** of the numbers with "Total sum of numbers:" and the sum. Do not count the 0 into the sum, even though it does not change the result.
+
+```console
+Give a number:
+> 5
+Give a number:
+> -2
+Give a number:
+> 22
+Give a number:
+> 0
+Total sum of numbers: 25
+```
+
+#### Exercise_40
+
+Create a program which asks the user for integers. Exit with 0. In the end, output both the amount and the sum. Do not count 0 to either.
+
+```console
+Give a number:
+> 5
+Give a number:
+> -2
+Give a number:
+> 22
+Give a number:
+> 0
+Total sum of numbers: 25
+Total amount of numbers: 3
+```
+
+Hint: You will need two variables to store the data, one for the sum, one for the amount.

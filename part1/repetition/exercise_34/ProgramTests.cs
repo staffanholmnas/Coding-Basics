@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using exercise_16;
+using exercise_34;
 using NUnit.Framework;
 using System.Text.RegularExpressions;
 
@@ -10,7 +10,7 @@ namespace ProgramTests
   public class TestProgram
   {
     [Test]
-    public void TestExercise16Test2()
+    public void TestExercise34Test1()
     {
       using (StringWriter sw = new StringWriter())
       {
@@ -22,7 +22,12 @@ namespace ProgramTests
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "2"
+                "word",
+                "another",
+                "hot potato",
+                "kittens",
+                "this is weird",
+                "no"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -32,25 +37,34 @@ namespace ProgramTests
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-
+        string comparison = "";
+        for (int i = 0; i < 6; i++) {
+          comparison = comparison + "Do you want to continue?\n";
+        }
         // Assert
-        Assert.AreEqual("How many days?\n172800\n", sw.ToString().Replace("\r\n", "\n"), "There are 86400 seconds in a day!");
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Check your if-clause is correct!");
       }
     }
 
     [Test]
-    public void TestExercise16Test11()
+    public void TestExercise34Test4()
     {
       using (StringWriter sw = new StringWriter())
       {
-        int days = 11*86400;
+        // Save a reference to the standard output.
         TextWriter stdout = Console.Out;
 
+        // Redirect standard output to variable.
         Console.SetOut(sw);
 
         var data = String.Join(Environment.NewLine, new[]
         {
-                "11"
+                "word", "another", "mistery man",
+                "another", "for king and country",
+                "hot potato",
+                "kittens",
+                "this is weird",
+                "no"
                 });
 
         Console.SetIn(new System.IO.StringReader(data));
@@ -60,10 +74,15 @@ namespace ProgramTests
 
         // Restore the original standard output.
         Console.SetOut(stdout);
-
+        string comparison = "";
+        for (int i = 0; i <= 8; i++) {
+          comparison = comparison + "Do you want to continue?\n";
+        }
         // Assert
-        Assert.AreEqual("How many days?\n"+days+"\n", sw.ToString().Replace("\r\n", "\n"), "There are 86400 seconds in a day!");
+        Assert.AreEqual(comparison, sw.ToString().Replace("\r\n", "\n"), "Check your if-clause is correct!");
       }
     }
+
+
   }
 }
