@@ -14,7 +14,6 @@ namespace exercise_49
     public static void PrintPhrase() 
     {
       Console.WriteLine("In a hole in the ground there lived a method"); // Prints a line of text.
-      Console.WriteLine("");
     }
   }
 }
