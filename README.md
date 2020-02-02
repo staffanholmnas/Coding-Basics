@@ -1561,8 +1561,8 @@ Expand the program to ask for a start and end indices once it has finished askin
 > -1 
 From where?
 > 1
-To where?
-> 2 
+Where to?
+> 9 
 2 
 8
 ```
@@ -1575,9 +1575,142 @@ To where?
 > -1 
 From where?
 > 0 
-To where?
-> 2 
-72 
-2 
+Where to?
+> 20  
+2
 8
+11 
+```
+
+#### Exercise_70
+
+The exercise template contains a base that reads numbers from the user and adds them to a list. Reading is stopped once the user enters the number -1.
+
+Continue developing the program so that it ends the greatest number in the list and prints its value after reading all the numbers. The programming should work in the following manner.
+
+```console
+> 72
+> 2
+> 8
+> 93
+> 11
+> -1
+The greatest number: 93
+```
+You can assume that user always gives atleast one viable number.
+
+You can use the source code below as an inspitation. It is used to find the smallest number.
+
+```cs
+// assume we have a list that contains integers
+
+int smallest = list[0];
+
+for(int i = 0; i < list.Count; i++) {
+    int number = list[i];
+    if (smallest > number) {
+        smallest = number;
+    }
+}
+
+Console.WriteLine("The smallest number: " + smallest);
+```
+
+#### Exercise_71
+
+The exercise template contains a base that reads numbers from the user and adds them to a list. Reading is stopped once the user enters the number -1.
+
+Expand the program that then asks the user for a number, and reports that number's index in the list. If the number is not found, the program should not print anything.
+
+```console
+> 72 
+> 2 
+> 8 
+> 8 
+> 11 
+> -1
+Search for? 
+> 2 
+2 is at index 1
+```
+
+```console
+> 72 
+> 2 
+> 8 
+> 8 
+> 11 
+> -1
+Search for? 
+> 8 
+8 is at index 2
+8 is at index 3
+```
+
+#### Exercise_72
+
+Write a program that reads numbers from the user. When number 9999 is entered, the reading process stops. After this the program will print the smallest number in the list, and also the indices where that number is found. Notice: the smallest number can appear multiple times in the list.
+
+```console
+> 72
+> 2
+> 8
+> 8
+> 11
+> 9999
+Smallest number: 2 
+Found at index: 1
+```
+
+```console
+> 72
+> 44
+> 8
+> 8
+> 11
+> 9999
+Smallest number: 8 
+Found at index: 2 
+Found at index: 3
+```
+
+HINT: combine the programs you wrote for the exercises "Greatest number in the list" and "Index of the requested number". First find the smalleest number, and then find the index of that number.
+
+#### Exercise_73
+
+The exercise template contains a base that reads numbers from the user and adds them to a list. Reading is stopped once the user enters the number -1.
+
+Modify the program so that after reading the numbers it calculates and prints the sum of the numbers in the list.
+
+```console
+> 72
+> 2
+> 8
+> 11
+> -1
+Sum: 93
+```
+
+#### Exercise_74
+
+In the exercise template there is a program that reads inputs from the user until an empty string is entered. Add the following functionality to it: after reading the inputs one more string is requested from the user. The program then tell whether that string was found in the list or not.
+
+```
+> Tom
+> Emma
+> Alex
+> Mary
+Search for?
+> Mary
+Mary was found!
+```
+
+```
+> Tom
+> Emma
+> Alex
+> Mary
+Search for?
+> Logan
+Logan was not found!
 ```
