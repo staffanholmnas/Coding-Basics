@@ -19,7 +19,8 @@ namespace exercise_63
 
         list.Add(input);
       }
-      Console.WriteLine(list[0]);
+      int sum = list[1] + list[2];
+      Console.WriteLine(sum);
     }
 
   }
