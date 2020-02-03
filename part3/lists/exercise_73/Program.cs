@@ -18,6 +18,14 @@ namespace exercise_73
         list.Add(input);
       }
 
+      int sum = 0; // Declares a variable sum with starting value 0.
+
+      foreach (int number in list) // Iterates through the list and adds each number to sum.
+      {
+        sum = sum + number;  
+      }
+
+      Console.WriteLine("Sum: " + sum); // Prints the sum.
     }
   }
 }
