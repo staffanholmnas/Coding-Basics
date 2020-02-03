@@ -1714,3 +1714,78 @@ Search for?
 > Logan
 Logan was not found!
 ```
+
+#### Exercise_75
+
+Create the method **public static void PrintNumbersInRange(List\<int\> numbers, int lowerLimit, int upperLimit)** in the exercise template. The method prints the numbers in the given list whose values are in the range [lowerLimit, upperLimit]. A few examples of using the method are supplied below.
+
+```cs
+List<int> numbers = new List<int>();
+numbers.Add(3);
+numbers.Add(2);
+numbers.Add(6);
+numbers.Add(-1);
+numbers.Add(5);
+numnbers.Add(1);
+
+Console.WriteLine("The numbers in the range [0, 5]");
+PrintNumbersInRange(numbers, 0, 5);
+
+Console.WriteLine("The numbers in the range [3, 10]");
+PrintNumbersInRange(numbers, 3, 10);
+```
+
+```console
+The numbers in the range [0, 5] 
+3 
+2 
+5 
+1 
+The numbers in the range [3, 10] 
+3 
+6 
+5
+```
+
+#### Exercise_76
+
+
+Create the method **public static int Sum(List\<int\> numbers)** in the exercise template. The method is to **return** the sum of the numbers in the parameter list.
+
+```cs
+List<int> numbers = new List<int>();
+numbers.Add(3);
+numbers.Add(2);
+numbers.Add(6);
+numbers.Add(-1);
+Console.WriteLine(Sum(numbers));
+
+numbers.Add(5);
+numbers.Add(1);
+Console.WriteLine(Sum(numbers));
+```
+
+```console
+10
+16
+```
+
+### Exercise_77
+
+Create the method **public static void RemoveLast(List\<string\> strings)** in the exercise template. The method should remove the last value in the list it receives as a parameter. If the list is empty, the method does nothing.
+
+```cs
+List<string> strings = new List<string>();
+
+strings.Add("First");
+strings.Add("Second");
+strings.Add("Third");
+
+// Remember, this is how you print all the items in a list
+strings.ForEach(Console.WriteLine);
+
+RemoveLast(strings);
+RemoveLast(strings);
+
+strings.ForEach(Console.WriteLine);
+```
