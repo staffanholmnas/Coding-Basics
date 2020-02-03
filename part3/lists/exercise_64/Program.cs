@@ -23,7 +23,10 @@ namespace exercise_64
         Console.WriteLine(line);
         
       }
-      Console.WriteLine(lines[6]);
+      Console.WriteLine(lines[6]); 
+      // Prints a specific line in the list. This list ends at index 5 so when we 
+      // try to print the sixth string we get an out_of_range error. 
+      // This is on purpose and the goal of the exercise.
     }
 
   }

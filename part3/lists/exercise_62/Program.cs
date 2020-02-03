@@ -21,7 +21,7 @@ namespace exercise_62
       }
 
       // BEGIN SOLUTION
-      Console.WriteLine(list[2]);
+      Console.WriteLine(list[2]); // Prints the third string in the list.
       // END SOLUTION
     }
 

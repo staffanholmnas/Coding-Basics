@@ -19,7 +19,7 @@ namespace exercise_63
 
         list.Add(input);
       }
-      int sum = list[1] + list[2];
+      int sum = list[1] + list[2]; // Stores the sum of the second and third numbers entered, then prints it.
       Console.WriteLine(sum);
     }
 

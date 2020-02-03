@@ -17,8 +17,9 @@ namespace exercise_65
         }
         list.Add(input);
       }
-      int totalNumberOfInputs = list.Count;
-      Console.WriteLine("In total: " + totalNumberOfInputs);
+      int totalNumberOfInputs = list.Count; // Stores the total number of strings entered.
+
+      Console.WriteLine("In total: " + totalNumberOfInputs); // Prints the total amount of inputs.
     }
   }
 }
