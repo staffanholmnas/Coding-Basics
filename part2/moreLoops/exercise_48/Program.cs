@@ -21,7 +21,7 @@ namespace exercise_48
       {
         int input = Convert.ToInt32(Console.ReadLine()); // Input variable is converted to integer.
 
-        if (input == -1) // Breaks the loop if input is -1.
+        if (input == -1) // Breaks the loop if input is exaclty -1.
         {
           break;
         }
