@@ -7,7 +7,11 @@ namespace exercise_83
   {
     public static void Main(string[] args)
     {
+      Console.Write("Give a word: "); // Reads an input and prints it 3 times.
 
+      string word = Console.ReadLine();
+      
+      Console.WriteLine(word + word + word);
 
     }
 
