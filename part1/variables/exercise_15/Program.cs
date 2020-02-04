@@ -13,7 +13,7 @@ namespace exercise_15
       Console.WriteLine("Give a string:");
       string message = Console.ReadLine();
 
-      // Asks you to write a number and converts it to an integer.
+      // Asks for a number and converts it to an integer.
       Console.WriteLine("Give an integer:");
       string input1 = Console.ReadLine();
       int number1 = Convert.ToInt32(input1);

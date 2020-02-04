@@ -13,7 +13,7 @@ namespace exercise_13
 
       string input = Console.ReadLine();
 
-      // The string is converted to a double.
+      // The string is converted to a double type.
       Double number = Convert.ToDouble(input);
 
       // The integer is printed out.
