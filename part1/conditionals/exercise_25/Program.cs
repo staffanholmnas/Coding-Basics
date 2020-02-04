@@ -13,7 +13,7 @@ namespace exercise_25
       string input = Console.ReadLine();
       int year = Convert.ToInt32(input);
       
-      // If the number is exactly the same as the set value, it prints a message.
+      // If the given number is exactly equal to the value below, it prints a message.
       if (year == 1984)
       {
         Console.WriteLine("Orwell");
