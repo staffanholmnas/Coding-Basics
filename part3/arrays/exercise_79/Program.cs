@@ -22,9 +22,22 @@ namespace exercise_79
       int searching = Convert.ToInt32(Console.ReadLine());
 
       // Implement the search functionality here
+      int notFound = 1; // If this variable turns to 1 the last message is printed.
 
+      for (int i = 0; i < array.Length; i++) // Iterates over the indices in the array.
+      {
+          if (array[i] == searching) // If the value in the array matches the value we search for, then a message is printed.
+          {
+            Console.WriteLine(searching + " is at index " + i + ".");
+            notFound = 0; // If the value is found, then notFound is 0 and the last message is not printed.
+          }
+      }
+
+      if (notFound == 1)
+      {
+        Console.WriteLine(searching + " was not found."); // Is only printed if the value was not found.
+      }
     }
-
   }
 }
 
