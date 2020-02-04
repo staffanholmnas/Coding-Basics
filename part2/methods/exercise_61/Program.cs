@@ -32,14 +32,14 @@ namespace exercise_61
         PrintStars(i);
       }
     }
-    public static void ChristmasTree(int height) // Draws a cristmas tree made of stars. Height should be more than 3.
+    public static void ChristmasTree(int height) // Draws a christmas tree made of stars. Height should be more than 3.
     {
       for (int i = 1; i <= height; i++)
       {
-        PrintSpaces(height - i);
+        PrintSpaces(height - i); // Prints the canopy.
         PrintStars((2 * i) - 1);
       } 
-      PrintSpaces(height - 2);
+      PrintSpaces(height - 2); // Prints the trunk, always in the centre of the tree.
       PrintStars(3);
       PrintSpaces(height - 2);
       PrintStars(3);

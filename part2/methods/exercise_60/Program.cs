@@ -12,7 +12,7 @@ namespace exercise_60
       // call the print command n times
       // in the end print a line break with the comand
       // Console.WriteLine("");
-      for (int i = 0; i < number; i++) // Prints n number of stars followed by a line change.
+      for (int i = 0; i < number; i++) // Prints chosen number of stars followed by a line change.
       {
         Console.Write("*");
       }
