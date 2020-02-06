@@ -178,7 +178,7 @@ namespace sandbox
                                        // stored in the variable greatest so it can be checked again in the next iteration. 
                 }
             }
-            return greatest; // Returns the largest value. This method could also be used to return the index.
+            return greatest; // Returns the largest value. This method could also be used to return an index.
         }
     }
 }
