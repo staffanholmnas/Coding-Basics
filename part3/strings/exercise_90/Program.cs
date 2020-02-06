@@ -27,8 +27,13 @@ namespace exercise_90
         list.Add(age); // Adds the integer to the list.
         
       }
-      // The following code searches for the greatest value in the list.
-
+      
+        int oldest = OldestAge(list); // Calls the method OldestAge that searches the list for the largest value. Stores the largest value in oldest.
+        
+        Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
+    }
+    public static int OldestAge(List<int> list) // Method that gets the greatest value from the list.
+    {
       int greatest = list[0]; // The first value int the list is the greatest.
 
       for(int i = 0; i < list.Count; i++) // Iterates through the indices of the list.
@@ -41,10 +46,7 @@ namespace exercise_90
           // stored in the variable greatest so it can be checked again in the next iteration. 
         }
       }
-
-        int oldest = greatest; // The greatest value in the list is the oldest person.
-        
-        Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
+      return greatest; // Returns the largest value.
     }
   }
 }
