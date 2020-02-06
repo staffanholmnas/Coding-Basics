@@ -3,52 +3,30 @@ using System.Collections.Generic;
 
 namespace exercise_90
 {
-  class Program
-  {
-    public static void Main(string[] args)
+    class Program
     {
-      List<int> list = new List<int>(); // Creates a new list.
-
-      int age = 0; // Declares an integer called age that is needed later.
-      
-      while (true) // A loop that asks for inputs until an empty line is entered.
-      {
-        string input = Console.ReadLine();
-        
-        if (input == "")
+        public static void Main(string[] args)
         {
-          break;
-        }
-        
-        string[] array = input.Split(","); // Splits the input strings at every comma, each part stored in the array. 
-        
-        age = Convert.ToInt32(array[1]); // Converts the second string entered to an integer stored in the variable age.
-        
-        list.Add(age); // Adds the integer to the list.
-        
-      }
-      
-        int oldest = OldestAge(list); // Calls the method OldestAge that searches the list for the largest value. Stores the largest value in oldest.
-        
-        Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
-    }
-    public static int OldestAge(List<int> list) // Method that gets the greatest value from the list.
-    {
-      int greatest = list[0]; // The first value int the list is the greatest.
+            // The while loop asks for user input until an empty line is entered. Enter: name,age.
+            int oldest = 0;
+            while (true) 
+            {
+                string input = Console.ReadLine();
+                if (input == "")
+                {
+                    break;
+                }
 
-      for(int i = 0; i < list.Count; i++) // Iterates through the indices of the list.
-      {
-        int number = list[i]; // Each value in the list is stored in a variable called number.
+                string[] array = input.Split(","); // Splits the strings into 2 parts and stores them in an array.
 
-        if (greatest < number) // Checks if the value is bigger than the previous value for each iteration.
-        {
-          greatest = number; // If the value was smaller, nothing happens. If it was bigger, the value is
-          // stored in the variable greatest so it can be checked again in the next iteration. 
+                if (Convert.ToInt32(array[1]) > oldest) // Converts to integer and checks if the value is the largest.
+                {
+                    oldest = Convert.ToInt32(array[1]); // The largest value is stored in the variable oldest.
+                }
+            }
+            Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest age.
         }
-      }
-      return greatest; // Returns the largest value.
     }
-  }
 }
 
 
