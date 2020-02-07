@@ -6,7 +6,32 @@ namespace sandbox
     class Program
     {
         static void Main(string[] args)
-        {
+        {   // Practice using classes and objects.
+            Person ada = new Person("Ada");
+            Person antti = new Person("Antti");
+            Person martin = new Person("Martin");
+
+            ada.PrintPerson();
+            antti.PrintPerson();
+            martin.PrintPerson();
+
+            Console.WriteLine();
+
+            ada.GrowOlder();
+            antti.GrowOlder(); // Grows older 2 times.
+            antti.GrowOlder();
+
+            ada.PrintPerson();
+            antti.PrintPerson();
+            martin.PrintPerson();
+
+
+            // Classes exercise ends.
+            Console.WriteLine("");
+            // Prints the time.
+            System.DateTime moment = DateTime.Now;
+            Console.WriteLine(moment);
+
             // Print Stars in different patterns.
 
             PrintStars(5);
@@ -83,7 +108,7 @@ namespace sandbox
                 Console.Write(array[i]);
             }
 
-
+            /*
             List<int> listOfAges = new List<int>(); // Creates a new list.
 
             int age = 0; // Declares an integer called age that is needed later.
@@ -111,7 +136,7 @@ namespace sandbox
 
             int oldest = OldestAge(listOfAges); // Calls the method OldestAge that searches the list for the largest value. Stores the largest value in oldest.
 
-            Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
+            Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.*/
 
 
         }
@@ -190,4 +215,3 @@ namespace sandbox
 
 
 
-      
