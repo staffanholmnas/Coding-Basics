@@ -40,7 +40,7 @@ namespace exercise_92
             }
             age = 2020 - oldest; // Gets the age instead of date of birth.
 
-            Console.WriteLine("Longest name: " + longestName); // Prints the results of longest name and highest age.
+            Console.WriteLine("Longest name: " + longestName); // Prints the results of the longest name and highest age.
             Console.WriteLine("Highest age: " + age);
         }
     }
