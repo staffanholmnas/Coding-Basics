@@ -7,7 +7,8 @@ namespace sandbox
     {
         static void Main(string[] args)
         {   // Practice using classes and objects.
-            Person ada = new Person("Ada");
+        
+           /* Person ada = new Person("Ada");
             Person antti = new Person("Antti");
             Person martin = new Person("Martin");
 
@@ -23,7 +24,7 @@ namespace sandbox
 
             ada.PrintPerson();
             antti.PrintPerson();
-            martin.PrintPerson();
+            martin.PrintPerson();*/
 
 
             // Classes exercise ends.
