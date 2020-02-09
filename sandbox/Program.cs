@@ -11,20 +11,98 @@ namespace sandbox
             Person ada = new Person("Ada");
             Person antti = new Person("Antti");
             Person martin = new Person("Martin");
+            Person pekka = new Person("Pekka");
+            Person matti = new Person("Matti");
+            Person juhana = new Person("Juhana");
 
-            ada.PrintPerson();
-            antti.PrintPerson();
-            martin.PrintPerson();
+            matti.height = 180;
+            matti.weight = 86;
+
+            juhana.height = 178;
+            juhana.weight = 70;
+
+            ada.height = 160;
+            ada.weight = 55;
+
+            antti.height = 189;
+            antti.weight = 90;
+
+            martin.height = 124;
+            martin.weight = 46;
+
+            pekka.height = 177;
+            pekka.weight = 72;
+
+            Console.WriteLine(matti.name + ", body mass index is " + matti.BodyMassIndex());
+            Console.WriteLine(juhana.name + ", body mass index is " + juhana.BodyMassIndex());
+            Console.WriteLine("");
+
+            for (int i = 0; i < 20; i++)
+            {
+                ada.GrowOlder();
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                martin.GrowOlder();
+            }
+            
+
+            int ioof = 0;
+            while (ioof < 27)
+            {
+                pekka.GrowOlder();
+                ioof++;
+            }
+
+            antti.GrowOlder();
+
+            if (antti.IsOfLegalAge())
+            {
+                Console.WriteLine(antti.name + " is of legal age");
+
+            }
+            else
+            {
+                Console.WriteLine(antti.name + " is underage");
+            }
+
+            if (pekka.IsOfLegalAge())
+            {
+                Console.WriteLine(pekka.name + " is of legal age");
+
+            }
+            else
+            {
+                Console.WriteLine(pekka.name + " is underage ");
+            }
+
+
+            Console.WriteLine("");
+            Console.WriteLine(pekka); // Same as Console.WriteLine(pekka.ToString() )
+            Console.WriteLine(antti);
+            Console.WriteLine(ada);
+
 
             Console.WriteLine();
 
             ada.GrowOlder();
-            antti.GrowOlder(); // Grows older 2 times.
             antti.GrowOlder();
+            pekka.GrowOlder();
+            pekka.GrowOlder();
 
-            ada.PrintPerson();
-            antti.PrintPerson();
-            martin.PrintPerson();
+
+            Console.WriteLine(pekka);
+            Console.WriteLine(antti);
+            Console.WriteLine(ada);
+            Console.WriteLine(martin);
+
+            Console.WriteLine("");
+            Console.WriteLine("Pekka's age: " + pekka.name);
+            Console.WriteLine("Antti's age: " + antti.name);
+            int combined = pekka.age + antti.age;
+
+            Console.WriteLine("Pekka's and Antti's combined age " + combined + " years");
 
 
             // Classes exercise ends.
