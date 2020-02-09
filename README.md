@@ -13,7 +13,7 @@ The deadlines are every Sunday.
 | 1  | 26.01.2020 at 23:59| 40        |
 | 2  | 02.02.2020 at 23:59| 31        |
 | 3  | 09.02.2020 at 23:59| 31        |
-| 4  | 16.02.2020 at 23:59| XX        |
+| 4  | 16.02.2020 at 23:59| 29        |
 | 5  | 23.02.2020 at 23:59| XX        |
 | 6  | 01.03.2020 at 23:59| XX        |
 
@@ -1794,6 +1794,14 @@ RemoveLast(strings);
 strings.ForEach(Console.WriteLine);
 ```
 
+```console
+First
+Second
+Third
+First
+```
+
+
 ## Arrays
 
 #### Exercise_78
@@ -2749,3 +2757,216 @@ Betty Holberton
 ```
 
 You can (and should) ask the identification number as a string.
+
+#### Exercise_112
+
+In the exercise template there is a ready-made class TelevisionProgram, representing a television program. The class has object variables name and duration, a constructor, and a few methods.
+
+Implement a program that begins by reading television programs from the user. When the user inputs an empty string as the name of the program, the program stops reading programs.
+
+After this the user is queried for a maximum duration. Once the maximum is given, the program proceeds to list all the programs whose duration is smaller or equal to the specified maximum duration.
+
+```console
+Name: Rick and Morty 
+Duration: 25 
+Name: Two and a Half Men 
+Duration: 30 
+Name: Love it or list it 
+Duration: 60 
+Name: House 
+Duration: 60
+Name:
+
+Program's maximum duration? 30 
+Rick and Morty, 25 minutes 
+Two and a Half Men, 30 minutes
+```
+
+#### Exercise_113
+
+This exercise is worth 2.
+
+Write a program that first reads book information from the user. The details to be asked for each book include the title, the number of pages, and the publication year. Entering an empty string as the name of the book ends the reading process.
+
+After this the user is asked for what is to be printed. If the user inputs "everything", all the details are printed: the book titles, the numbers of pages, and the publication years. However, if the user enters the string "title", only the book titles are printed. If something else than "everything" or "title" is given, the program should not print anything.
+
+- Implement the class Book.
+- Implement the functionality in the Main method.
+
+Example of how the program in Main should work:
+
+```console
+
+Title: To Kill a Mockingbird 
+Pages: 281 
+Publication year: 1960 
+Title: A Brief History of Time 
+Pages: 256 
+Publication year: 1988 
+Title: Beautiful Code 
+Pages: 593 
+Publication year: 2007 
+Title: The Name of the Wind 
+Pages: 662 
+Publication year: 2007 
+Title:
+
+What information will be printed? everything 
+To Kill a Mockingbird, 281 pages, 1960 
+A Brief History of Time, 256 pages, 1988 
+Beautiful Code, 593 pages, 2007 
+The Name of the Wind, 662 pages, 2007
+```
+
+```console
+Title: To Kill a Mockingbird 
+Pages: 281 
+Publication year: 1960 
+Title: A Brief History of Time 
+Pages: 256 
+Publication year: 1988 
+Title: Beautiful Code 
+Pages: 593 
+Publication year: 2007 
+Title: The Name of the Wind 
+Pages: 662 
+Publication year: 2007 
+Title:
+
+What information will be printed? name 
+To Kill a Mockingbird 
+A Brief History of Time 
+Beautiful Code 
+The Name of the Wind
+```
+
+## Files and reading data
+
+#### Exercise_114
+
+As a recap, a simple program of reading the input.
+
+Write a program that reads strings from the user until the user inputs the string "end". At that point, the program should print how many strings have been read. The string "end" should not be included in the number strings read. You can find some examples below of how the program works.
+
+```console
+> I 
+> have
+> a
+> feeling
+> that
+> I
+> have
+> written
+> this
+> wrong
+> before
+> end 
+11
+```
+
+```console
+> end 
+0
+```
+
+#### Exercise_115
+
+Write a program that reads strings from the user until the user inputs the string "end". As long as the input is not "end", the program should handle the input as an integer and print the cube of the number provided (i.e., number _ number _ number). Below are some sample outputs
+
+```console
+> 3 
+27 
+> -1 
+1 
+> 11 
+1331 
+> end
+```
+
+```console
+end
+```
+
+Remember to convert to integer before calculation!
+
+#### Exercise_116
+
+Write a program that prints the contents of a file called "data.txt", such that each line of the file is printed on its own line.
+
+If the file content looks like so:
+
+In a world
+Where code is built
+
+Then the program should print the following:
+
+```console
+In a world
+Where code is built
+```
+
+#### Exercise_117
+
+Write a program that asks the user for a string, and then prints the contents of a file with a name matching the string provided. You may assume that the user provides a file name that the program can find. You do not have to worry about getting errors when the file does not exist.
+
+The exercise template contains the files "data.txt" and "song.txt", which you may use when testing the functionality of your program. The output of the program can be seen below for when a user has entered the string "song.txt". The content that is printed comes from the file "song.txt". Naturally, the program should also work with other filenames, assuming the file can be found.
+
+```console
+Which file should have its contents printed? 
+> song.txt 
+
+No option for duality 
+The old is where we come 
+Clockspeed is fast, but we'll survive 
+The new will overcome 
+We are challengers, not followers 
+We take the ball to build 
+Easy safe services 
+Are here to stay
+
+Value for society 
+Value for life 
+For you and me 
+Tieto is here allright!
+```
+
+#### Exercise_118
+
+The exercise template comes ready with functionality for the guest list application. It checks whether names entered by the user are on the guest list.
+
+However, the program is missing the functionality needed for reading the guest list. Modify the program so that the names on the guest list are read from the file.
+
+Name of the file: guestlist.txt
+
+```console
+Enter names, an empty line quits. 
+> Chuck Norris 
+The name is not on the list. 
+> Jack Baluer 
+The name is not on the list. 
+> Jack Bauer 
+The name is on the list. 
+> Jack Bower 
+The name is on the list.
+>
+Thank you!
+```
+
+NOTICE! The exercise template comes with two files, names.txt and other-names.txt, which have the following contents. Do not change the contents of the files!
+
+names.txt:
+
+ada  
+arto  
+leena  
+test  
+heikki  
+   
+other-names.txt:
+  
+leo   
+jarmo   
+alicia  
+mike  
+potato  
+  
