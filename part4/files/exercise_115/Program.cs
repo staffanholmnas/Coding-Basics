@@ -7,7 +7,7 @@ namespace exercise_115
         public static void Main(string[] args)
         {
 
-
+            // Reads inputs until the word "end" is entered. Every number is cubed and printed.
             while (true)
             {
                 string input = Console.ReadLine();
@@ -15,9 +15,10 @@ namespace exercise_115
                 {
                     break;
                 }
+
                 int number = Convert.ToInt32(input);
-                int squared = number * number;
-                Console.WriteLine(squared);
+                int cubed = number * number * number;
+                Console.WriteLine(cubed);
             }
         }
     }
