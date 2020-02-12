@@ -1,13 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Generic; // This is for using lists, arrays.
+using System.IO; // This is for using files.
 
 namespace sandbox
 {
     class Program
     {
         static void Main(string[] args)
-        {   // Practice using classes and objects.
+        {
+            // Practise reading files.
+            // This reads the content as one string.
+            string text = File.ReadAllText("text.txt");
 
+            // Display the file contents to the console. Variable text is a string.
+            Console.WriteLine("This was done with ReadAllText.");
+            Console.WriteLine(text);
+            Console.WriteLine();
+
+            // Read the text from a file line by line and store the lines in an array.
+            Console.WriteLine("This was done with ReadAllLines.");
+            string[] lines = File.ReadAllLines("text.txt");
+
+            // Prints each line in the array.
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Trying to print integers from text file in bytes");
+            // Experiment with integers in a text file.
+            byte[] numbers = File.ReadAllBytes("Integers.txt");
+            foreach (byte item in numbers)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+
+            // Practice using classes and objects.
             Person ada = new Person("Ada");
             Person antti = new Person("Antti");
             Person martin = new Person("Martin");
@@ -46,7 +76,7 @@ namespace sandbox
             {
                 martin.GrowOlder();
             }
-            
+
 
             int ioof = 0;
             while (ioof < 27)
