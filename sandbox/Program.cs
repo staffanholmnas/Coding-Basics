@@ -37,6 +37,15 @@ namespace sandbox
             }
             Console.WriteLine();
 
+            // Practice reading from a csv-file.
+            string[] csvRecord = File.ReadAllLines("records.csv.txt");
+            foreach (string line in csvRecord)
+            {
+                string[] pieces = line.Split(",");
+                Console.WriteLine("Name: " + pieces[0] + ", age: " + pieces[1]);
+            }
+            Console.WriteLine();
+
             // Practice using classes and objects.
             Person ada = new Person("Ada");
             Person antti = new Person("Antti");
