@@ -22,6 +22,7 @@ namespace exercise_79
       int searching = Convert.ToInt32(Console.ReadLine());
 
       // Implement the search functionality here
+      // The notFound variable could also be of type boolean.
       int notFound = 1; // If this variable turns to 1 the last message is printed.
 
       for (int i = 0; i < array.Length; i++) // Iterates over the indices in the array.
