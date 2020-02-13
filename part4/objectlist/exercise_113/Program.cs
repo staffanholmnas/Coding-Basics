@@ -34,7 +34,7 @@ namespace exercise_113
 
             Console.WriteLine();
 
-            // Enter the what information will be printed: everything or name.
+            // Enter what information will be printed: everything or name.
             Console.Write("What information will be printed? ");
             string whatToPrint = Console.ReadLine();
 
