@@ -22,7 +22,7 @@ namespace exercise_110
                 items.Add(new Item(input)); // Creates a new object for each item and adds them to the items list.
             }
 
-            Console.WriteLine();
+            Console.WriteLine();// The test requires an empty line. It is also present in the exercise example.
             foreach (Item item in items) // Prints all objects in the list.
             {
                 Console.WriteLine(item);

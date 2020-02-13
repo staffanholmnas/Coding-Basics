@@ -7,7 +7,7 @@ namespace exercise_116
   {
     public static void Main(string[] args)
     { 
-      // Read the file data.txt and print the text from it as it is
+      // Read the file data.txt and print the text from it as it is.
       string lines = File.ReadAllText("data.txt");
       Console.WriteLine(lines);
     }

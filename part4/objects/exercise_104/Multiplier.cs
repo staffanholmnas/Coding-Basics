@@ -11,9 +11,11 @@ namespace exercise_104
         {
             this.number = number;
         }
-        public int Multiply(int number) // Method that multplies the value number passed to it with the number provided by the constructor.
+
+        // Method that multplies the value number passed to it with the number provided by the constructor.
+        public int Multiply(int number) 
         {
-            this.number = number * this.number;
+            this.number = number * this.number; // The product becomes the new instance variable.
             return this.number;
         }
 
