@@ -28,7 +28,7 @@ namespace sandbox
             }
             Console.WriteLine();
 
-            Console.WriteLine("Trying to print integers from text file in bytes");
+            Console.WriteLine("Printing strings from text file in bytes");
             // Experiment with integers in a text file.
             byte[] numbers = File.ReadAllBytes("Integers.txt");
             foreach (byte item in numbers)
@@ -150,8 +150,11 @@ namespace sandbox
             System.DateTime moment = DateTime.Now;
             Console.WriteLine(moment);
 
-            // Print Stars in different patterns.
 
+
+                                    /* Comment out printing using methods and lists.
+
+            // Print Stars in different patterns.
             PrintStars(5);
             PrintStars(3);
             PrintStars(9);
@@ -226,7 +229,7 @@ namespace sandbox
                 Console.Write(array[i]);
             }
 
-            /*
+            
             List<int> listOfAges = new List<int>(); // Creates a new list.
 
             int age = 0; // Declares an integer called age that is needed later.
@@ -254,10 +257,16 @@ namespace sandbox
 
             int oldest = OldestAge(listOfAges); // Calls the method OldestAge that searches the list for the largest value. Stores the largest value in oldest.
 
-            Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.*/
+            Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
 
+
+                        Main program ends. */ 
 
         }
+
+            /* Comments out methods.
+        
+
         public static void PrintStars(int number) // Method for printing stars.
         {
             // you can print one star with the command
@@ -307,6 +316,9 @@ namespace sandbox
                 PrintStars(i);
             }
         }
+
+        
+
         public static int OldestAge(List<int> list) // Method that gets the greatest value from the list.
         {
             int greatest = list[0]; // The first value int the list is the greatest.
@@ -323,6 +335,8 @@ namespace sandbox
             }
             return greatest; // Returns the largest value. This method could also be used to return an index.
         }
+
+        */
     }
 }
 
