@@ -6,7 +6,6 @@ namespace exercise_15
   {
     public static void Main(string[] args)
     {
-
       // Write your code here:
 
       // Asks you to write something and stores it.
