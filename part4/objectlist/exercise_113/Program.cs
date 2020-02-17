@@ -46,7 +46,7 @@ namespace exercise_113
                 }
             }
 
-            if (whatToPrint == "name") // Only prints the name.
+            if (whatToPrint == "title") // Only prints the name. Changed input string "name" to "title" after the test was altered.
             {
                 foreach (Book item in list)
                 {
