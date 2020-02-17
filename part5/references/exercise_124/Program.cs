@@ -9,10 +9,10 @@ namespace exercise_124
         {
             // Implement your program here!
 
-          List<int> list = new List<int>(); // Creates a new list object.
+            List<int> list = new List<int>(); // Creates a new list object.
 
-         list = null; // The list is nulled.
-         list.ForEach(Console.WriteLine); // Tries to do something with the list, but we get a NullReferenceException error instead.
+            list = null; // The list is nulled.
+            list.ForEach(Console.WriteLine); // Tries to do something with the list, but we get a NullReferenceException error instead.
 
         }
     }
