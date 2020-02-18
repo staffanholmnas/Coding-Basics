@@ -23,7 +23,9 @@ The deadlines are every Sunday.
 | 3  | 09.02.2020 at 23:59| 31        |
 | 4  | 16.02.2020 at 23:59| 29        |
 | 5  | 01.03.2020 at 23:59| 22        |
-| 6  | 01.03.2020 at 23:59| XX        |
+| 6  | 08.03.2020 at 23:59| XX        |
+
+NOTICE! Ther has been extension to deadlines 5 and 6.
 
 The exercises might be in multiple sections **in the instructions**, to make it easier to comprehend. In the end, you should still have **only one program per exercise** to return in such case.   
 
@@ -3497,7 +3499,7 @@ True
 
 #### Exercise_129
 
-In the exercise base there is a class called **Song** that can be used to create new objects that represent songs. Add to that class the equals method so that the similarity of songs can be examined.
+In the exercise base there is a class called **Song** that can be used to create new objects that represent songs. Add to that class the **Equals** method so that the similarity of songs can be examined.
 
 You can try your code with this:
 
@@ -3557,23 +3559,23 @@ For each item, its identifier and name should be read. If the identifier or name
 Example print:
 
 ```console
-Identifier? (empty will stop)
+Identifier? (empty will stop):
 > B07H8ND8HH 
-Name? (empty will stop)
+Name? (empty will stop):
 > He-Man figure
-Identifier? (empty will stop)
+Identifier? (empty will stop):
 > B07H8ND8HH 
-Name? (empty will stop)
+Name? (empty will stop):
 > He-Man 
-Identifier? (empty will stop)
+Identifier? (empty will stop):
 > B07NQFMZYG 
-Name? (empty will stop)
+Name? (empty will stop):
 > He-Man figure 
-Identifier? (empty will stop)
+Identifier? (empty will stop):
 > B07NQFMZYG 
-Name? (empty will stop) 
+Name? (empty will stop):
 > He-Man figure
-Identifier? (empty will stop)
+Identifier? (empty will stop):
 >
 
 ==Items== 
