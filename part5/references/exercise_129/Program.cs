@@ -7,8 +7,9 @@ namespace exercise_129
         public static void Main(string[] args)
         {
             // Try your code here, if you want
-            Song jackSparrow = new Song("The Lonely Island", "Jack Sparrow", 296);
+            Song jackSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
             Song anotherSparrow = new Song("The Lonely Island", "Jack Sparrow", 196);
+            Song anotherJack = new Song("The Lonely Island", "Jack Scarecrow", 296);
 
             if (jackSparrow.Equals(anotherSparrow))
             {
@@ -18,11 +19,10 @@ namespace exercise_129
             {
                 Console.WriteLine("Songs are not equal.");
             }
-            if (jackSparrow.Equals("Another object"))
+            if (!jackSparrow.Equals(anotherJack))
             {
                 Console.WriteLine("Strange things are afoot.");
             }
         }
-
     }
 }
