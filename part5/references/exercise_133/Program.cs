@@ -15,7 +15,7 @@ namespace exercise_133
       Console.WriteLine(money);
       Console.WriteLine(moreMoney);
       Console.WriteLine(combined);
-
+      
       Money lessMoney = moreMoney.Minus(money);
 
       Console.WriteLine(money);
