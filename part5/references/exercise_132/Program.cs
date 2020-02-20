@@ -12,7 +12,7 @@ namespace exercise_132
 
             SimpleDate newDate = date.AfterNumberOfDays(7);
             int week = 1;
-            while (week <= 7)
+            while (week <= 100)
             {
                 Console.WriteLine("Friday after " + week + " weeks is " + newDate);
                 newDate = newDate.AfterNumberOfDays(7);

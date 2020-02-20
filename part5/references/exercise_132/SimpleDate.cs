@@ -16,35 +16,41 @@ namespace exercise_132
         public void Advance()
         {
             // Do something here
-            Advance(1);
+            this.day++;
 
-           /*  if (this.day > 30)
-            {
-                this.month++;
-                this.day = 1;
-            }
-            if (this.month > 12)
-            {
-                this.year++;
-                this.month = 1;
-            } */
+             /*  if (this.day > 30)
+             {
+                 this.month++;
+                 this.day = 1;
+             }
+             if (this.month > 12)
+             {
+                 this.year++;
+                 this.month = 1;
+             }  */
         }
 
         public void Advance(int howManyDays)
         {
             // Do something here
-            this.day = this.day + howManyDays;
-
-            if (this.day > 30)
+            
+            for (int i = 0; i < howManyDays; i++)
             {
-                this.month++;
-                this.day = this.day - 30;
+                
+                Advance();
 
+                 // this.day = this.day + howManyDays;
+
+                if (this.day > 30)
+                {
+                    this.month++;
+                    this.day = this.day - 30;
+                }
                 if (this.month > 12)
                 {
                     this.year++;
                     this.month = 1;
-                }
+                } 
             }
         }
 
