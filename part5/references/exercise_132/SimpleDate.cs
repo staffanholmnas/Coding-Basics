@@ -16,36 +16,27 @@ namespace exercise_132
         public void Advance()
         {
             // Do something here
+            // Adds 1 to days.
             this.day++;
-
-             /*  if (this.day > 30)
-             {
-                 this.month++;
-                 this.day = 1;
-             }
-             if (this.month > 12)
-             {
-                 this.year++;
-                 this.month = 1;
-             }  */
         }
 
         public void Advance(int howManyDays)
         {
             // Do something here
-            
+            // Days advances by 1 for every loop. When days are over 30 then they are reset and 1 added to month.
+            // When months exceeds 12 they are reset and 1 added to years. Choose the length of the loop when calling AfterNumberOfDays.
+
             for (int i = 0; i < howManyDays; i++)
             {
-                
+                // Calls the method that advances the date by 1.
                 Advance();
-
-                 // this.day = this.day + howManyDays;
 
                 if (this.day > 30)
                 {
                     this.month++;
-                    this.day = this.day - 30;
+                    this.day = 1;
                 }
+
                 if (this.month > 12)
                 {
                     this.year++;
@@ -56,9 +47,13 @@ namespace exercise_132
 
         public SimpleDate AfterNumberOfDays(int days)
         {
+            // Creates a new object called newDate with the same values as the date.
             SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
             // Do something here
+
+            // Calls the method that advances the days by the number of days specified when the method is called.
             newDate.Advance(days);
+
             return newDate;
         }
 
