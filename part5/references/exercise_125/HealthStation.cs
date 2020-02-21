@@ -5,6 +5,7 @@ namespace exercise_125
         public int weighings { get; private set; }
 
         // Create a constructor here, if needed
+        // This constructor is there by default and actually not needed:
         public HealthStation()
         {
             this.weighings = 0;
