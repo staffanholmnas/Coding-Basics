@@ -12,7 +12,8 @@ namespace exercise_120
       // then prints the cube objects string representation.
       Cube cube = new Cube(5);
       Console.WriteLine(cube);
-      
+      Console.WriteLine(cube);
+      Console.WriteLine(cube);
     }
   }
 }

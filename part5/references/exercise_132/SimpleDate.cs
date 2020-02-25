@@ -18,30 +18,30 @@ namespace exercise_132
             // Do something here
             // Adds 1 to days.
             this.day++;
+
+            // When days are over 30 then they are reset and 1 added to month.
+            // When months exceeds 12 they are reset and 1 added to years. 
+            if (this.day > 30)
+            {
+                this.month++;
+                this.day = 1;
+            }
+
+            if (this.month > 12)
+            {
+                this.year++;
+                this.month = 1;
+            }
         }
 
         public void Advance(int howManyDays)
         {
             // Do something here
-            // Days advances by 1 for every loop. When days are over 30 then they are reset and 1 added to month.
-            // When months exceeds 12 they are reset and 1 added to years. Choose the length of the loop when calling AfterNumberOfDays.
-
+            
             for (int i = 0; i < howManyDays; i++)
             {
-                // Calls the method that advances the date by 1.
+                // Advances the date by 1 for the specified number of days.
                 Advance();
-
-                if (this.day > 30)
-                {
-                    this.month++;
-                    this.day = 1;
-                }
-
-                if (this.month > 12)
-                {
-                    this.year++;
-                    this.month = 1;
-                } 
             }
         }
 

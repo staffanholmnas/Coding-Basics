@@ -16,7 +16,8 @@ namespace exercise_120
         // The cubes volume is calculated and returned.
         public int Volume()
         {
-            return this.edgeLength = edgeLength * edgeLength * edgeLength;
+            int volume = this.edgeLength * this.edgeLength * this.edgeLength;
+            return volume;
         }
 
         // Prints the length and the volume of the cube.
