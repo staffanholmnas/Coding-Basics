@@ -54,6 +54,11 @@ namespace exercise_129
                 return false;
             }
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(artist, name, durationInSeconds);
+        }
         // END SOLUTION
     }
 }

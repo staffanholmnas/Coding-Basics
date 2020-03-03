@@ -1,3 +1,5 @@
+using System;
+
 namespace exercise_131
 {
     public class Item
@@ -33,6 +35,11 @@ namespace exercise_131
             {
                 return false;
             }
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(identifier, name);
         }
     }
 }

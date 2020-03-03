@@ -21,9 +21,6 @@ namespace exercise_126
             double change = payment - 2.50;
             coffeeAmount++;
             return change;
-
-
-
         }
 
         public double EatLunch(double payment)
@@ -35,17 +32,12 @@ namespace exercise_126
             double change = payment - 10.30;
             lunchAmount++;
             return change;
-
-
-
         }
-
         public bool DrinkCoffee(PaymentCard card)
         {
             // a coffee costs 2.50 euros
             // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
             // otherwise false is returned
-
             if (card.balance >= 2.50)
             {
                 card.balance = card.balance - 2.50;
@@ -56,15 +48,12 @@ namespace exercise_126
             {
                 return false;
             }
-
         }
-
         public bool EatLunch(PaymentCard card)
         {
             // a lunch costs 10.30 euros
             // if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
             // otherwise false is returned
-            
             if (card.balance >= 10.30)
             {
                 card.balance = card.balance - 10.30;
@@ -76,7 +65,6 @@ namespace exercise_126
                 return false;
             }
         }
-
         public void AddMoneyToCard(PaymentCard card, double sum)
         {
             // ...
