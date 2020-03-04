@@ -1,4 +1,3 @@
-using System;
 
 namespace exercise_133
 {
@@ -27,8 +26,8 @@ namespace exercise_133
       Money newMoney = new Money(this.euros, this.cents);
       // create a new Money object that has the correct worth
       // The new clone has the first objects values and added to that are the values of the object that calls.
-      newMoney.euros = newMoney.euros + addition.euros;
-      newMoney.cents = newMoney.cents + addition.cents;
+      newMoney.euros += addition.euros;
+      newMoney.cents += addition.cents;
 
       // This changes the amount to the correct format if more than 100 cents are added.
       // 140 cents, for instance, is 1.40e.
