@@ -1,64 +1,67 @@
 namespace exercise_134
 {
-  using System;
-  public class UserInterface
-  {
-    private GradeRegister register;
-
-    public UserInterface(GradeRegister register)
+    using System;
+    public class UserInterface
     {
-      this.register = register;
-    }
+        private GradeRegister register;
 
-    public void Start()
-    {
-      ReadPoints();
-      Console.WriteLine("");
-      PrintGradeDistribution();
-    }
-
-    public void ReadPoints()
-    {
-      while (true)
-      {
-        Console.WriteLine("Points:");
-        string input = Console.ReadLine();
-        if (input == "")
+        public UserInterface(GradeRegister register)
         {
-          break;
+            this.register = register;
         }
-        int score = Convert.ToInt32(input);
 
-        if (score < 0 || score > 100)
+        public void Start()
         {
-          Console.WriteLine("Impossible number.");
-          continue;
+            ReadPoints();
+            Console.WriteLine("");
+            PrintGradeDistribution();
         }
-        register.AddGradeBasedOnPoints(score);
-      }
-    }
 
-    public void PrintGradeDistribution()
-    {
-      int grade = 5;
-      while (grade >= 0)
-      {
-        int stars = register.NumberOfGrades(grade);
-        Console.Write(grade + ": ");
-        PrintStars(stars);
-        Console.WriteLine();
+        public void ReadPoints()
+        {
+            while (true)
+            {
+                Console.WriteLine("Points:");
+                string input = Console.ReadLine();
+                if (input == "")
+                {
+                    break;
+                }
+                int score = Convert.ToInt32(input);
 
-        grade = grade - 1;
-      }
+                if (score < 0 || score > 100)
+                {
+                    Console.WriteLine("Impossible number.");
+                    continue;
+                }
+                register.AddGradeBasedOnPoints(score);
+            }
+        }
+
+        public void PrintGradeDistribution()
+        {
+            int grade = 5;
+            while (grade >= 0)
+            {
+                int stars = register.NumberOfGrades(grade);
+                Console.Write(grade + ": ");
+                PrintStars(stars);
+                Console.WriteLine();
+
+                grade = grade - 1;
+            }
+            // Prints the averages after the grades.
+            Console.WriteLine("The average of points: " + register.AverageOfPoints());
+            Console.WriteLine("The average of grades: " + register.AverageOfGrades());
+        }
+        public static void PrintStars(int stars)
+        {
+            while (stars > 0)
+            {
+                Console.Write("*");
+                stars--;
+            }
+        }
     }
-    public static void PrintStars(int stars)
-    {
-      while (stars > 0)
-      {
-        Console.Write("*");
-        stars--;
-      }
-    }
-  }
 }
 
