@@ -73,7 +73,7 @@ public class GradeRegister
         }
         avg = sum / grades.Count;
 
-        if (sum == 0)
+        if (this.grades.Count == 0)
         {
             return -1;
         }
@@ -94,7 +94,7 @@ public class GradeRegister
         }
         avg = sum / points.Count;
 
-        if (sum == 0)
+        if (this.points.Count == 0)
         {
             return -1;
         }
