@@ -7,7 +7,12 @@ namespace extra_11
     public static void Main(string[] args)
     {
       // Add your code here:
-
+      Console.WriteLine("Give a sentence:");
+      string [] words = Console.ReadLine().Split(" ");
+      foreach (string item in words)
+      {
+          Console.WriteLine(item);
+      }
     }
   }
 }
