@@ -33,7 +33,8 @@ namespace extra_18
                     string name = Console.ReadLine();
                     Console.WriteLine("Name in latin:");
                     string latinName = Console.ReadLine();
-                    database.Addbirds(name, latinName);
+                    this.database = database.Addbirds(name, latinName);
+                    
                 }
                 if (input == "Observation")
                 {

@@ -6,27 +6,36 @@ namespace extra_18
     public class BirdDatabase
     {
         private int observations;
-        public Birds bird;
+        private string name;
+        private string latinName;
 
 
+        public BirdDatabase(string name, string latinName)
+        {
+            this.observations = 2;
+            this.name = name;
+            this.latinName = latinName;
+        }
         public BirdDatabase()
         {
             this.observations = 2;
         }
 
+
         public void Observations()
         {
             this.observations++;
         }
-        public Birds Addbirds(string name, string latinName)
+        public BirdDatabase Addbirds(string name, string latinName)
         {
-            Birds bird = new Birds(name, latinName);
-            
+            BirdDatabase bird = new BirdDatabase(name, latinName);
+
             return bird;
+            
         }
         public override string ToString()
         {
-            return "this " + this.observations;
+            return "this " + this.observations + " " + this.name + " " + this.latinName;
         }
     }
 }
