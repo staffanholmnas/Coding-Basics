@@ -1,15 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace extra_18
 {
-  class Program
-  {
-    public static void Main(string[] args)
+    class Program
     {
-      // Add your code here:
-        BirdDatabase db = new BirdDatabase();
-        UserInterface ui = new UserInterface(db);
-        ui.Start();
+        public static void Main(string[] args)
+        {
+            BirdDatabase db = new BirdDatabase();
+            UserInterface ui = new UserInterface(db);
+            ui.Start();
+        }
     }
-  }
 }

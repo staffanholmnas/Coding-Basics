@@ -4,12 +4,20 @@ namespace extra_18
 {
     public class UserInterface
     {
-        public BirdDatabase database;
+        private BirdDatabase database;
+
         public UserInterface(BirdDatabase database)
         {
             this.database = database;
         }
+
         public void Start()
+        {
+            ReadCommands();
+
+        }
+
+        public void ReadCommands()
         {
             while (true)
             {
@@ -25,7 +33,7 @@ namespace extra_18
                     string name = Console.ReadLine();
                     Console.WriteLine("Name in latin:");
                     string latinName = Console.ReadLine();
-                    Birds hjkl = new Birds(name, latinName);
+                    database.Addbirds(name, latinName);
                 }
                 if (input == "Observation")
                 {
@@ -35,15 +43,10 @@ namespace extra_18
                 }
                 if (input == "All")
                 {
-                    Console.WriteLine();
+                    Console.WriteLine(this.database);
                 }
-
-
             }
-        }
-        public override string ToString()
-        {
-            return "blää";
         }
     }
 }
+

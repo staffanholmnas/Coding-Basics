@@ -1,28 +1,32 @@
-using System;
 using System.Collections.Generic;
+using System;
 
 namespace extra_18
 {
     public class BirdDatabase
     {
-        public Birds name;
-        public int observations;
+        private int observations;
+        public Birds bird;
+
+
         public BirdDatabase()
         {
-            this.observations = 0;
+            this.observations = 2;
         }
 
-        public void Observation()
+        public void Observations()
         {
             this.observations++;
         }
-        public void PrintAll()
+        public Birds Addbirds(string name, string latinName)
         {
-
+            Birds bird = new Birds(name, latinName);
+            
+            return bird;
         }
-        public void PrintOne()
+        public override string ToString()
         {
-
+            return "this " + this.observations;
         }
     }
 }
