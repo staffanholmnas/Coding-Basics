@@ -14,7 +14,6 @@ namespace extra_18
         public void Start()
         {
             ReadCommands();
-
         }
 
         public void ReadCommands()
@@ -40,7 +39,14 @@ namespace extra_18
                 {
                     Console.WriteLine("Bird?");
                     string observation = Console.ReadLine();
-                    break;
+                    if (this.database.ObservationCheck(observation))
+                    {
+                        this.database.Observations();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a bird!");
+                    }
                 }
                 if (input == "All")
                 {

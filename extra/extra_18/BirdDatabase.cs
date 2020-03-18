@@ -8,17 +8,16 @@ namespace extra_18
         private int observations;
         private string name;
         private string latinName;
-
-
+        
         public BirdDatabase(string name, string latinName)
         {
-            this.observations = 2;
+            this.observations = 0;
             this.name = name;
             this.latinName = latinName;
         }
         public BirdDatabase()
         {
-            this.observations = 2;
+            this.observations = 0;
         }
 
 
@@ -26,16 +25,25 @@ namespace extra_18
         {
             this.observations++;
         }
-        public BirdDatabase Addbirds(string name, string latinName)
+        public bool ObservationCheck(string birdName)
         {
-            BirdDatabase bird = new BirdDatabase(name, latinName);
-
-            return bird;
+            if (birdName == this.name)
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
             
+        }
+        public BirdDatabase Addbirds(string birdName, string latinName)
+        {  
+            return new BirdDatabase(birdName, latinName); 
         }
         public override string ToString()
         {
-            return "this " + this.observations + " " + this.name + " " + this.latinName;
+            return this.name + " (" + this.latinName + "): " + this.observations + " observations";
         }
     }
 }
