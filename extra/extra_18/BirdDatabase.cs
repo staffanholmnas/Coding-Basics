@@ -1,49 +1,30 @@
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 namespace extra_18
 {
     public class BirdDatabase
     {
-        private int observations;
-        private string name;
-        private string latinName;
-        
-        public BirdDatabase(string name, string latinName)
-        {
-            this.observations = 0;
-            this.name = name;
-            this.latinName = latinName;
-        }
+        public List<Bird> birdList;
         public BirdDatabase()
         {
-            this.observations = 0;
+            this.birdList = new List<Bird>();
         }
-
-
-        public void Observations()
+        public void ObservationCheck(string birdName)
         {
-            this.observations++;
-        }
-        public bool ObservationCheck(string birdName)
-        {
-            if (birdName == this.name)
+            int nameFound = 0;
+            foreach (Bird item in birdList)
             {
-                return true;
+                if (birdName == item.name)
+                {
+                    item.Observations();
+                    nameFound = 1;
+                }
             }
-            else 
+            if (nameFound == 0)
             {
-                return false;
+                Console.WriteLine("Not a bird!");
             }
-            
-        }
-        public BirdDatabase Addbirds(string birdName, string latinName)
-        {  
-            return new BirdDatabase(birdName, latinName); 
-        }
-        public override string ToString()
-        {
-            return this.name + " (" + this.latinName + "): " + this.observations + " observations";
         }
     }
 }

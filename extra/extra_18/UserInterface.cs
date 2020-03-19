@@ -4,7 +4,7 @@ namespace extra_18
 {
     public class UserInterface
     {
-        private BirdDatabase database;
+        public BirdDatabase database;
 
         public UserInterface(BirdDatabase database)
         {
@@ -30,27 +30,38 @@ namespace extra_18
                 {
                     Console.WriteLine("Name:");
                     string name = Console.ReadLine();
-                    Console.WriteLine("Name in latin:");
+                    Console.WriteLine("Name in Latin:");
                     string latinName = Console.ReadLine();
-                    this.database = database.Addbirds(name, latinName);
-                    
+
+                    Bird bird = new Bird(name, latinName);
+
+                    database.birdList.Add(bird);
                 }
-                if (input == "Observation")
+                if(input == "Observation")
                 {
                     Console.WriteLine("Bird?");
                     string observation = Console.ReadLine();
-                    if (this.database.ObservationCheck(observation))
-                    {
-                        this.database.Observations();
-                    }
-                    else
-                    {
-                        Console.WriteLine("Not a bird!");
-                    }
+                    this.database.ObservationCheck(observation);
                 }
                 if (input == "All")
                 {
-                    Console.WriteLine(this.database);
+                    for (int i = database.birdList.Count - 1; i >= 0; i--)
+                    {
+                        Console.WriteLine(database.birdList[i]);
+                    }
+                }
+                if (input == "One")
+                {
+                    Console.WriteLine("Which bird?");
+                    string name = Console.ReadLine();
+
+                    foreach (Bird item in database.birdList)
+                    {
+                        if (name == item.name)
+                        {
+                            Console.WriteLine(item);
+                        }
+                    }
                 }
             }
         }

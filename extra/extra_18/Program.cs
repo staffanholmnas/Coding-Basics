@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace extra_18
+﻿namespace extra_18
 {
     class Program
     {
