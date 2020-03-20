@@ -40,8 +40,8 @@ namespace extra_18
                 if(input == "Observation")
                 {
                     Console.WriteLine("Bird?");
-                    string observation = Console.ReadLine();
-                    this.database.ObservationCheck(observation);
+                    string birdName = Console.ReadLine();
+                    this.database.ObservationCheck(birdName);
                 }
                 if (input == "All")
                 {

@@ -12,16 +12,16 @@ namespace extra_18
         }
         public void ObservationCheck(string birdName)
         {
-            int nameFound = 0;
+            bool nameFound = false;
             foreach (Bird item in birdList)
             {
                 if (birdName == item.name)
                 {
                     item.Observations();
-                    nameFound = 1;
+                    nameFound = true;
                 }
             }
-            if (nameFound == 0)
+            if (nameFound == false)
             {
                 Console.WriteLine("Not a bird!");
             }
