@@ -10,7 +10,7 @@ namespace exercise_113
             // IMPLEMENT YOUR CODE IN HERE!
             // Remember also to create the file Book.cs and class in it!
 
-            List<Book> list = new List<Book>(); // Creates new list.
+            List<Book> list = new List<Book>(); // Creates a new list.
 
             // Loop that asks for a book name, number of pages and year of publication. Empty line at name of book quits.
             while (true)
