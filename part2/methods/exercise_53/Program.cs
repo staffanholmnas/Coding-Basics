@@ -15,8 +15,8 @@ namespace exercise_53
     public static void Division(int numerator, int denominator)
     {
       double answer = (double)numerator/denominator; // The numbers are divided and the rusult is printed.
-      string stringAnswer = Convert.ToString(answer); // In order to pass the test, the answer is converted to string and
-      string dotReplaced = stringAnswer.Replace(",", "."); // the comma is replaced with a dot.
+      string stringAnswer = Convert.ToString(answer); // In order to pass the test, the answer is converted to a string.
+      string dotReplaced = stringAnswer.Replace(",", "."); // The comma is replaced with a dot.
       Console.WriteLine(dotReplaced);
     }
   }
