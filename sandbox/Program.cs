@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic; // This is for using lists, arrays.
+using System.Collections.Generic; // This is for using lists, arrays and dictionaries...
 using System.IO; // This is for using files.
 
 namespace sandbox
@@ -158,8 +158,24 @@ namespace sandbox
             Console.WriteLine(date2);
             Console.WriteLine(date1.Equals(date2));
             Console.WriteLine(date1 == date2);
+            Console.WriteLine();
 
 
+            // Part 8 - Dictionaries
+
+            Dictionary<string, string> postalCodes = new Dictionary<string, string>();
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+
+            postalCodes.Add("00710", "Helsinki");
+            postalCodes.Add("90014", "Oulu");
+            postalCodes.Add("33720", "Tampere");
+            postalCodes.Add("33014", "Tampere");
+            dict.Add("Fiftyfive", 55);
+            dict.Add("Threehundred", 300);
+            dict.Add("Twentyfour", 24);
+
+            Console.WriteLine(postalCodes["90014"]);
+            Console.WriteLine(dict["Threehundred"]);
 
             /* Comment out printing using methods and lists.
 
