@@ -170,12 +170,32 @@ namespace sandbox
             postalCodes.Add("90014", "Oulu");
             postalCodes.Add("33720", "Tampere");
             postalCodes.Add("33014", "Tampere");
+            postalCodes.Add("99999", null);
             dict.Add("Fiftyfive", 55);
-            dict.Add("Threehundred", 300);
+            
+            if (!dict.ContainsKey("Threehundred"))
+            {
+                dict.Add("Threehundred", 300);
+            }
+
             dict.Add("Twentyfour", 24);
 
             Console.WriteLine(postalCodes["90014"]);
             Console.WriteLine(dict["Threehundred"]);
+
+            Console.WriteLine();
+             
+            // Both Console.Writelines print the same thing.
+            foreach (KeyValuePair<string, string> item in postalCodes)
+            {
+                Console.WriteLine("Key = " + item.Key + ", Value = " + item.Value);
+            }
+            
+            foreach (KeyValuePair<string, string> item in postalCodes)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);
+            }
+            
 
             /* Comment out printing using methods and lists.
 
