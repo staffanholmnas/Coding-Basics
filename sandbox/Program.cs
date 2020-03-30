@@ -185,13 +185,13 @@ namespace sandbox
 
             Console.WriteLine();
              
-            // Both Console.Writelines print the same thing.
+            // Both Console.Writelines methods do the same thing.
             foreach (KeyValuePair<string, string> item in postalCodes)
             {
                 Console.WriteLine("Key = " + item.Key + ", Value = " + item.Value);
             }
             
-            foreach (KeyValuePair<string, string> item in postalCodes)
+            foreach (KeyValuePair<string, int> item in dict)
             {
                 Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);
             }
