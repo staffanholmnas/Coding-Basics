@@ -1,23 +1,44 @@
 using System.Collections.Generic;
+using System;
 
 namespace Exercise
 {
-  public class Abbreviations
-  {
-
-    public void AddAbbreviation(string abbreviation, string explanation)
+    public class Abbreviations
     {
+        private Dictionary<string, string> dict;
 
-    }
+        public Abbreviations()
+        {
+            this.dict = new Dictionary<string, string>();
+        }
 
-    public bool HasAbbreviation(string abbreviation)
-    {
-      return false;
-    }
+        public void AddAbbreviation(string abbreviation, string explanation)
+        {
+            this.dict.Add(abbreviation, explanation);
+        }
 
-    public string FindExplanationFor(string abbreviation)
-    {
-      return null;
+        public bool HasAbbreviation(string abbreviation)
+        {
+            if (this.dict.ContainsKey(abbreviation))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public string FindExplanationFor(string abbreviation)
+        {
+            if (HasAbbreviation(abbreviation))
+            {
+                return this.dict[abbreviation];
+            }
+            else
+            {
+                return "not found";
+            }
+        }
     }
-  }
 }
