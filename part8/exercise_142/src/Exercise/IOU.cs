@@ -11,29 +11,28 @@ namespace Exercise
         }
         public void ChangeDebt(string toWhom, int amount)
         {
+            // If the person is already on the debt list, add the old debt to the new debt. 
+            // Then the debt to the person in the dictionary is updated to be the new debt.  
+            // The debt can't be negative in any case.
             if (this.dictionary.ContainsKey(toWhom))
             {
-                // If the person is already on the debt list, add the old debt to the new debt. 
-                // Then remove the key/value element from the dictionary and add a new key/value pair. 
-                // The debt can't be negative in any case.
                 int newAmount = this.dictionary[toWhom] + amount;
-                this.dictionary.Remove(toWhom);
                 if (newAmount >= 0)
                 {
-                    this.dictionary.Add(toWhom, newAmount);
+                    this.dictionary[toWhom] = newAmount;
                 }
                 else
                 {
-                    this.dictionary.Add(toWhom, 0);
+                    this.dictionary[toWhom] = 0;
                 }
             }
             else if (amount >= 0)
             {
-                this.dictionary.Add(toWhom, amount);
+                this.dictionary[toWhom] = amount;
             }
             else
             {
-                this.dictionary.Add(toWhom, 0);
+                this.dictionary[toWhom] = 0;
             }
         }
         public int HowMuchDoIOweTo(string toWhom)
