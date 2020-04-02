@@ -3,32 +3,73 @@ using System.Collections.Generic;
 
 namespace Exercise
 {
-  public class VehicleRegistry
-  {
-    private Dictionary<LicensePlate, string> owners = new Dictionary<LicensePlate, string>();
-    public bool Add(LicensePlate licensePlate, string owner)
+    public class VehicleRegistry
     {
-      return false;
-    }
+        private Dictionary<LicensePlate, string> owners;
 
-    public string Get(LicensePlate licensePlate)
-    {
-      return "No such license";
-    }
+        public VehicleRegistry()
+        {
+            this.owners = new Dictionary<LicensePlate, string>();
+        }
 
-    public bool Remove(LicensePlate licensePlate)
-    {
-      return false;
-    }
+        public bool Add(LicensePlate licensePlate, string owner)
+        {
+            if (!this.owners.ContainsKey(licensePlate))
+            {
+                this.owners.Add(licensePlate, owner);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-    public void PrintLicensePlates()
-    {
-      
-    }
+        public string Get(LicensePlate licensePlate)
+        {
+            if (this.owners.ContainsKey(licensePlate))
+            {
+                return this.owners[licensePlate];
+            }
+            else
+            {
+                return "License plate could not be found in the registry!";
+            }
+        }
 
-    public void PrintOwners()
-    {
+        public bool Remove(LicensePlate licensePlate)
+        {
+            if (this.owners.ContainsKey(licensePlate))
+            {
+                this.owners.Remove(licensePlate);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
+        public void PrintLicensePlates()
+        {
+            foreach (KeyValuePair<LicensePlate, string> item in this.owners)
+            {
+                Console.WriteLine(item.Key);
+            }
+        }
+
+        public void PrintOwners()
+        {
+            List<string> alreadyPrinted = new List<string>();
+
+            foreach (KeyValuePair<LicensePlate, string> item in this.owners)
+            {
+                if (!alreadyPrinted.Contains(item.Value))
+                {
+                    Console.WriteLine(item.Value);
+                }
+                alreadyPrinted.Add(item.Value);
+            }
+        }
     }
-  }
 }
