@@ -1,20 +1,18 @@
 namespace Exercise
 {
-  using System;
-  using System.Collections.Generic;
-  public abstract class Box
-  {
-
-    public abstract void Add(Item item);
-
-    public void Add(List<Item> items)
+    using System.Collections.Generic;
+    public abstract class Box
     {
-      foreach (Item item in items)
-      {
-        this.Add(item);
-      }
-    }
+        public abstract void Add(Item item);
 
-    public abstract bool IsInBox(Item item);
-  }
+        public void Add(List<Item> items)
+        {
+            foreach (Item item in items)
+            {
+                this.Add(item);
+            }
+        }
+
+        public abstract bool IsInBox(Item item);
+    }
 }
