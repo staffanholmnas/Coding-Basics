@@ -11,12 +11,14 @@ namespace Exercise
             this.capacity = capacity;
             this.list = new List<Item>();
         }
+
         public override void Add(Item item)
         {
-            if (item.weight < this.capacity)
+            if (item.weight <= this.capacity)
             {
-                int sumOfObjectPropertiesInlist = list.Sum(item => item.weight);
-                if (sumOfObjectPropertiesInlist < this.capacity)
+                int sumOfObjectPropertiesInList = list.Sum(item => item.weight) + item.weight;
+        
+                if (sumOfObjectPropertiesInList <= this.capacity)
                 {
                     list.Add(item);
                 }

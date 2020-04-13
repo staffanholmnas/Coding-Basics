@@ -5,14 +5,6 @@ namespace Exercise
     {
         public abstract void Add(Item item);
 
-        public void Add(List<Item> items)
-        {
-            foreach (Item item in items)
-            {
-                this.Add(item);
-            }
-        }
-
         public abstract bool IsInBox(Item item);
     }
 }
