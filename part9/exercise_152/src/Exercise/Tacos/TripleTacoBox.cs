@@ -1,16 +1,25 @@
 namespace Exercise
 {
-  public class TripleTacoBox : ITacoBox
-  {
-
-    public int TacosRemaining()
+    public class TripleTacoBox : ITacoBox
     {
-      return 0;
-    }
+        private int tacos;
 
-    public void Eat()
-    {
+        public TripleTacoBox()
+        {
+            this.tacos = 3;
+        }
 
+        public int TacosRemaining()
+        {
+            return this.tacos;
+        }
+
+        public void Eat()
+        {
+            if (this.tacos > 0)
+            {
+                this.tacos = this.tacos - 1;
+            }
+        }
     }
-  }
 }
