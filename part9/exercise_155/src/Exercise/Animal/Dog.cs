@@ -1,23 +1,25 @@
 namespace Exercise
 {
-  using System;
-  public class Dog : Animal, INoiseCapable
-  {
-
-    public Dog() : this("")
+    using System;
+    public class Dog : Animal, INoiseCapable
     {
-    }
 
-    public Dog(string name) : base(name)
-    {
-    }
+        public Dog() : this("Dog")
+        {
+        }
 
-    public void Bark()
-    {
-    }
-    public void MakeNoise()
-    {
-    }
+        public Dog(string name) : base(name)
+        {
+        }
 
-  }
+        public void Bark()
+        {
+            Console.WriteLine(this.name + " barks");
+        }
+
+        public void MakeNoise()
+        {
+          Bark();
+        }
+    }
 }

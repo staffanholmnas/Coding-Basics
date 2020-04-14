@@ -1,8 +1,7 @@
 namespace Exercise
 {
-  public interface INoiseCapable
-  {
-
-    void MakeNoise();
-  }
+    public interface INoiseCapable
+    {
+        void MakeNoise();
+    }
 }
