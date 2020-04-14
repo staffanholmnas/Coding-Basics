@@ -14,7 +14,7 @@ namespace Exercise
 
         public void Purr()
         {
-            Console.WriteLine(this.name + " Meows");
+            Console.WriteLine(this.name + " purrs");
         }
         public void MakeNoise()
         {
