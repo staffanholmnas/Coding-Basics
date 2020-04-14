@@ -33,11 +33,6 @@ namespace Exercise
 
         public override string ToString()
         {
-          // Returns a specific ToString representation if the box is empty in order to pass the test.
-          if ((list.Count == 0) && (Weight() == 0))
-          {
-              return list.Count + " items, total weight " + Weight() + " kg\n";
-          }
             return list.Count + " items, total weight " + Weight() + " kg";
         }
     }
