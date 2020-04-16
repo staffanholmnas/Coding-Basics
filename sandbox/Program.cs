@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic; // This is for using lists, arrays and dictionaries...
 using System.IO; // This is for using files.
+using System.Linq; // This adds funtionality for lists.
+using System.Text; // This is for using StringBuilder.
+using System.Text.RegularExpressions; // This is for Regex.
 
 namespace sandbox
 {
