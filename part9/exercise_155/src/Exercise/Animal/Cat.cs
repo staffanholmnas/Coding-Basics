@@ -3,7 +3,6 @@ namespace Exercise
     using System;
     public class Cat : Animal, INoiseCapable
     {
-
         public Cat() : this("Cat")
         {
         }
