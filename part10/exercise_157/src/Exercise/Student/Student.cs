@@ -14,14 +14,13 @@ namespace Exercise
 
     public override string ToString()
     {
-      return name;
+      return this.name;
     }
 
     //BEGIN SOLUTION
     public int CompareTo(Student another)
     {
-
-      return 0;
+      return this.name.CompareTo(another.name);
     }
     //END SOLUTION
   }
