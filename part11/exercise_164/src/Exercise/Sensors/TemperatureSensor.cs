@@ -1,28 +1,41 @@
 namespace Exercise
 {
-  using System;
-  public class TemperatureSensor : Sensor
-  {
-
-    public bool IsOn()
+    using System;
+    public class TemperatureSensor : Sensor
     {
-      return false;
+        private Random random;
+        private Boolean onOffSwitch;
+
+        public TemperatureSensor()
+        {
+            this.random = new Random();
+            this.onOffSwitch = false;
+        }
+
+        public bool IsOn()
+        {
+            return this.onOffSwitch;
+        }
+
+        public void SetOn()
+        {
+            this.onOffSwitch = true;
+        }
+
+        public void SetOff()
+        {
+            this.onOffSwitch = false;
+        }
+
+        public int Read()
+        {
+            if (!IsOn())
+            {
+                throw new InvalidOperationException("Turn on the temperature sensor first!");
+            }
+            
+            int randomTemp = this.random.Next(60) - 30;
+            return randomTemp;
+        }
     }
-
-
-    public void SetOn()
-    {
-    }
-
-
-    public void SetOff()
-    {
-    }
-
-
-    public int Read()
-    {
-      return 0;
-    }
-  }
 }
