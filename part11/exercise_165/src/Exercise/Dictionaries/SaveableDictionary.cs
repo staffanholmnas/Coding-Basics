@@ -48,19 +48,20 @@ namespace Exercise
             try
             {
                 StreamWriter writer = new StreamWriter(this.file);
+
                 foreach (KeyValuePair<string, string> item in this.dictionary)
                 {
                     writer.WriteLine(item.Key + ":" + item.Value);
+
                 }
                 writer.Close();
+
                 return true;
             }
             catch (Exception)
             {
-
                 return false;
             }
-
         }
 
         public string Translate(string word)
