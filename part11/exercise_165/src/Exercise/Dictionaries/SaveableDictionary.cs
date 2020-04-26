@@ -84,10 +84,12 @@ namespace Exercise
         public void Delete(string word)
         {
             foreach (KeyValuePair<string, string> item in this.dictionary)
+            {
                 if (item.Key == word || item.Value == word)
                 {
                     this.dictionary.Remove(item.Key);
                 }
+            }
         }
 
         public void NextLine(string[] lines)
