@@ -50,7 +50,7 @@ namespace Exercise
             try
             {
                 StreamWriter writer = new StreamWriter(this.file);
-
+                // Saves every other line from the dictionary to the file to avoid double entries.
                 for (int i = 0; i < this.dictionary.Count; i++)
                 {
                     if (i % 2 == 0)
