@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Exercise
 {
@@ -21,9 +22,10 @@ namespace Exercise
 
         public void Add(string word, string translation)
         {
-            if (!this.dictionary.ContainsKey(word))
+            if (!this.dictionary.ContainsKey(word) && !this.dictionary.ContainsKey(translation))
             {
                 this.dictionary.Add(word, translation);
+                this.dictionary.Add(translation, word);
             }
         }
 
@@ -49,11 +51,14 @@ namespace Exercise
             {
                 StreamWriter writer = new StreamWriter(this.file);
 
-                foreach (KeyValuePair<string, string> item in this.dictionary)
+                for (int i = 0; i < this.dictionary.Count; i++)
                 {
-                    writer.WriteLine(item.Key + ":" + item.Value);
-
+                    if (i % 2 == 0)
+                    {
+                        writer.WriteLine(dictionary.Keys.ElementAt(i) + ":" + this.dictionary[this.dictionary.Keys.ElementAt(i)]);
+                    }
                 }
+
                 writer.Close();
 
                 return true;
@@ -71,13 +76,6 @@ namespace Exercise
                 return this.dictionary[word];
             }
 
-            foreach (KeyValuePair<string, string> item in this.dictionary)
-            {
-                if (item.Value == word)
-                {
-                    return item.Key;
-                }
-            }
             return null;
         }
 
@@ -97,7 +95,11 @@ namespace Exercise
             foreach (string line in lines)
             {
                 string[] parts = line.Split(":");
-                this.dictionary.Add(parts[0], parts[1]);
+                if (!this.dictionary.ContainsKey(parts[0]) || !this.dictionary.ContainsKey(parts[1]))
+                {
+                    this.dictionary.Add(parts[0], parts[1]);
+                    this.dictionary.Add(parts[1], parts[0]);
+                }
             }
         }
     }
