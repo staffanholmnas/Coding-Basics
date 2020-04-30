@@ -1,29 +1,30 @@
 namespace MasterProject
 {
-  
-  using System;
-  // Define an alias for the nested namespace. using Builders = ...
-  
-  public class MasterClass
-  {
-    public void Master()
+
+    using System;
+    // Define an alias for the nested namespace. using Builders = ...
+    using Builders = MasterProject.BuilderProject.Builders;
+
+    public class MasterClass
     {
-      // Use the alias
-      Builders.Builder bob = new Builders.Builder();
-      bob.Build();
-    }
-  }
-  namespace BuilderProject
-  {
-    namespace Builders
-    {
-      public class Builder
-      {
-        public void Build()
+        public void Master()
         {
-          Console.WriteLine("Can we fix it? Yes we can!");
+            // Use the alias
+            Builders.Builder bob = new Builders.Builder();
+            bob.Build();
         }
-      }
     }
-  }
+    namespace BuilderProject
+    {
+        namespace Builders
+        {
+            public class Builder
+            {
+                public void Build()
+                {
+                    Console.WriteLine("Can we fix it? Yes we can!");
+                }
+            }
+        }
+    }
 }
