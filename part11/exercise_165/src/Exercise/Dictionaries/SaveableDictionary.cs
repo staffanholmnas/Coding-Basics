@@ -35,14 +35,14 @@ namespace Exercise
             {
                 string[] lines = File.ReadAllLines(this.file);
                 NextLine(lines);
-
-                return true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return false;
             }
+
+            return true;
         }
 
         public bool Save()
@@ -55,18 +55,19 @@ namespace Exercise
                 {
                     if (i % 2 == 0)
                     {
-                        writer.WriteLine(dictionary.Keys.ElementAt(i) + ":" + this.dictionary[this.dictionary.Keys.ElementAt(i)]);
+                        writer.WriteLine(this.dictionary.Keys.ElementAt(i) + ":" + this.dictionary[this.dictionary.Keys.ElementAt(i)]);
                     }
                 }
 
                 writer.Close();
 
-                return true;
             }
             catch (Exception)
             {
                 return false;
             }
+
+            return true;
         }
 
         public string Translate(string word)
