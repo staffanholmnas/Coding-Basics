@@ -19,7 +19,7 @@ namespace Exercise
 
         public void MakeNoise()
         {
-          Bark();
+            Bark();
         }
     }
 }
