@@ -5,7 +5,6 @@ using System.Linq;
 
 namespace Exercise
 {
-
     public class SaveableDictionary
     {
         private Dictionary<string, string> dictionary;
