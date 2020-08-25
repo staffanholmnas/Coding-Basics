@@ -175,7 +175,7 @@ namespace sandbox
             postalCodes.Add("33014", "Tampere");
             postalCodes.Add("99999", null);
             dict.Add("Fiftyfive", 55);
-            
+
             if (!dict.ContainsKey("Threehundred"))
             {
                 dict.Add("Threehundred", 300);
@@ -187,18 +187,46 @@ namespace sandbox
             Console.WriteLine(dict["Threehundred"]);
 
             Console.WriteLine();
-             
+
             // Both Console.Writelines methods do the same thing.
             foreach (KeyValuePair<string, string> item in postalCodes)
             {
                 Console.WriteLine("Key = " + item.Key + ", Value = " + item.Value);
             }
-            
+
             foreach (KeyValuePair<string, int> item in dict)
             {
                 Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);
             }
-            
+
+            Console.WriteLine();
+
+            // Floating point numbers
+            float floatNumber = 21 / 9f + 0.6f;
+            double doubleNumber = 21 / (double)9;
+            decimal decimalNumber = 21 / 9m;
+
+            // Integers
+            byte byteNumberMax = byte.MaxValue;
+            sbyte sbyteNumberMax = sbyte.MaxValue;
+            short shortNumberMax = short.MaxValue;
+            ushort ushortNumberMax = ushort.MaxValue;
+            int integerNumberMax = int.MaxValue;
+            uint uintegerNumberMax = uint.MaxValue;
+            long longNumberMax = long.MaxValue;
+            ulong ulongNumberMax = ulong.MaxValue;
+
+            Console.WriteLine(floatNumber + " floatNumber");
+            Console.WriteLine(doubleNumber + " doubleNumber");
+            Console.WriteLine(decimalNumber + " decimalNumber");
+            Console.WriteLine(byteNumberMax + " byteNumberMax");
+            Console.WriteLine(sbyteNumberMax + " sbyteNumberMax");
+            Console.WriteLine(shortNumberMax + " shortNumberMax");
+            Console.WriteLine(ushortNumberMax + " ushortNumberMax");
+            Console.WriteLine(integerNumberMax + " integerNumberMax");
+            Console.WriteLine(uintegerNumberMax + " uintegerNumberMax");
+            Console.WriteLine(longNumberMax + " longNumberMax");
+            Console.WriteLine(ulongNumberMax + " ulongNumberMax");
 
             /* Comment out printing using methods and lists.
 
@@ -308,6 +336,177 @@ int oldest = OldestAge(listOfAges); // Calls the method OldestAge that searches 
 Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
 
 
+// Abstract_Class
+
+            UserInterface userInterface = new UserInterface();
+            userInterface.AddOperation(new PlusOperation());
+            userInterface.AddOperation(new MinusOperation());
+
+            userInterface.Start();
+
+// Bitwise
+
+// Bitwise OR, if either of the bits is 1, the result is 1. Otherwise the result is 0.
+            int firstNumber = 5, secondNumber = 6, result;
+            result = firstNumber | secondNumber; // 00000101 OR 000000110 = 00000111
+            Console.WriteLine("{0} | {1} = {2}", firstNumber, secondNumber, result); // 5 | 6 = 7
+
+            firstNumber = 14; secondNumber = 11; 
+            result = firstNumber | secondNumber; // 00001110 OR 00001011 = 00001111
+            Console.WriteLine("{0} | {1} = {2}", firstNumber, secondNumber, result); // 14 | 11 = 15
+
+            // Bitwise AND, if either of the bits is 0, the result is 0. Otherwise the result is 1.
+            firstNumber = 5; secondNumber = 6; 
+            result = firstNumber & secondNumber; // 00000101 AND 000000110 = 00000100
+            Console.WriteLine("{0} & {1} = {2}", firstNumber, secondNumber, result); // 5 & 6 = 4
+
+            firstNumber = 14; secondNumber = 11; 
+            result = firstNumber & secondNumber; // 00001110 AND 00001011 = 00001010
+            Console.WriteLine("{0} & {1} = {2}", firstNumber, secondNumber, result); // 14 | 11 = 10
+
+            // Bitwise XOR, if the corresponding bits are the same, the result is 0. Otherwise, the result is 1.
+            firstNumber = 5; secondNumber = 6; 
+            result = firstNumber ^ secondNumber; // 00000101 XOR 000000110 = 00000011
+            Console.WriteLine("{0} ^ {1} = {2}", firstNumber, secondNumber, result); // 5 ^ 6 = 3
+
+            firstNumber = 14; secondNumber = 11; 
+            result = firstNumber ^ secondNumber; // 00001110 XOR 00001011 = 00000101
+            Console.WriteLine("{0} ^ {1} = {2}", firstNumber, secondNumber, result); // 14 ^ 11 = 5
+
+// Enumerators
+
+Card first = new Card(9, Suit.Spade);
+
+            Console.WriteLine(first);
+
+            if (first.suit == Suit.Spade)
+            {
+                Console.WriteLine("is a spade");
+            }
+            else
+                Console.WriteLine("is not a spade");
+
+            Console.WriteLine((int)Suit.Spade); // Casting to int.
+            Console.WriteLine((int)Suit.Diamond);
+
+            List<Card> list = new List<Card>();
+
+            list.Add(new Card(8, Suit.Club));
+            list.Add(new Card(9, Suit.Diamond));
+            list.Add(new Card(13, Suit.Heart));
+            list.Add(new Card(9, Suit.Spade));
+
+            list.ForEach(Console.WriteLine);
+            list.Sort();
+            list.ForEach(Console.WriteLine);
+
+// Equals
+
+Book bookObject = new Book("Book object", 2000, "...");
+            Book anotherBookObject = new Book("Book object", 2000, "...");
+
+            if (bookObject.Equals(anotherBookObject))
+            {
+                Console.WriteLine("The books were the same");
+            }
+            else
+            {
+                Console.WriteLine("The books weren't the same");
+            }
+            Console.WriteLine("-------------");
+            Console.WriteLine(bookObject);
+            Console.WriteLine("-------------");
+
+            Dictionary<Book, string> borrowers = new Dictionary<Book, string>();
+
+            Book bookObject2 = new Book("Book Object", 2000, "...");
+            borrowers.Add(bookObject2, "Pekka");
+            borrowers.Add(new Book("Test Driven Development", 1999, "..."), "Arto");
+
+            Console.WriteLine(borrowers[bookObject2]);
+            Console.WriteLine(borrowers[new Book("Book Object", 2000, "...")]);
+            Console.WriteLine(borrowers[new Book("Test Driven Development", 1999, "...")]);
+
+
+// Exceptions
+
+Grade grade = new Grade(5);
+
+            Console.WriteLine("................");
+            Console.WriteLine("Trying to print contents of Text.txt:");
+            Console.WriteLine();
+            try
+            {
+                foreach (var item in ReadLines("GradeText.txt"))
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            catch (System.Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            Console.WriteLine("................");
+            List<string> list = new List<string>();
+            list.Add("Steve");
+            list.Add("Bill");
+            list.Add("Bob");
+            list.Add("Evangelica");
+
+            while (true)
+            {
+
+                Console.WriteLine("Write a number 1-3 or a get an error:");
+                int number = 0;
+
+                try
+                {
+                    number = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Good Job! It's a number.");
+
+                }
+                catch (Exception error)
+                {
+                    Console.Write(error.Message + "\nQuitting");
+                    System.Threading.Thread.Sleep(1000);
+                    Console.Write(".");
+                    System.Threading.Thread.Sleep(1000);
+                    Console.Write(".");
+                    Thread.Sleep(1000); // Because we're using System.Threading;
+                    Console.Write(".");
+
+                    break;
+                    // throw;
+                }
+                try
+                {
+
+                    Console.Write(list[number]);
+                    Console.WriteLine(" is a name from the list.");
+                    Console.WriteLine();
+
+                }
+                catch (System.Exception)
+                {
+                    Console.WriteLine("But don't try to print something that ain't on the list.");
+                    Console.WriteLine("................");
+                    // throw;
+                }
+                try
+                {
+                    int divideByZero = 4 / number;
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine("Error! " + e.Message);
+                    Console.WriteLine("................");
+                }
+            }
+        }
+
+
+
 Main program ends. */
 
         }
@@ -383,6 +582,19 @@ Main program ends. */
         }
         return greatest; // Returns the largest value. This method could also be used to return an index.
     }
+
+    public static List<string> ReadLines(string fileName)
+        {
+            List<string> list = new List<string>();
+            if (!File.Exists(fileName))
+            {
+                throw new FileNotFoundException();
+            }
+            string[] lines = File.ReadAllLines(fileName);
+            list = new List<string>(lines);  // Casting
+
+            return list;
+        }
 
     */
     }
