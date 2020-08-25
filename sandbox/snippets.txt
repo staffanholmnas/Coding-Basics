@@ -1,0 +1,358 @@
+Code Snippets C#
+
+DateTime now = DateTime.Now;
+Console.WriteLine(now);
+int year = now.Year;
+int month = now.Month;
+int day = now.Day;
+Console.WriteLine("today is  " + day + "." + month + "." + year);
+------------------------------------
+dotnet new console (-o <foldername>) 
+dotnet new wpf
+dotnet new winforms
+------------------------------------
+git init
+<create repo>
+git remote add <name> <http address to repo>
+OR
+git clone <http address to repo>
+------------------------------------
+Bash script example:
+#!/bin/bash
+# Writing a small script for repetition.
+# To run the sript type <bash script.sh> in the terminal.
+echo "To get date, type a message then press enter"
+read input
+if [ $input == "no" ];
+then 
+	echo "Don't be a party pooper"
+else
+	echo "You typed $input"
+	date
+fi
+------------------------------------
+#! = Shebang
+------------------------------------
+Math.Round(avg, 2);
+------------------------------------
+int a = 1, b = 2, c = 3; // Declare many variables in one line.
+------------------------------------
+if (n == 0) return 0;             
+else return n; // Code blocks not needed.
+------------------------------------
+using System;
+Random draw = new Random();
+int randomNumber = draw.Next(0, 100);
+// Draws a number from the range [0, 100[.  (number 0 to 99),
+int randomNumber2 = draw.Next(); // Random int32.
+int randomNumber3 = draw.Next(50) - 20;   //  (from -20 to 30).
+double probability = draw.NextDouble();  //  (from 0,0 to 1,0).
+------------------------------------
+int stringWordCount = name.Split().Length;
+------------------------------------
+List<string> list = new List<string>() { "List", "Words", "Here!" };
+------------------------------------
+int[] array = { 5, 1, 3, 4, 2 };
+Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
+Array.Sort(array);
+Array.Reverse(array);
+------------------------------------
+string [] words = input.Split(" ");
+------------------------------------
+// Read from and Write to files.
+using System.IO;
+string text = File.ReadAllText("text.txt");  // Read text
+StreamWriter writer = new StreamWriter("file.txt");  // Write text
+writer.WriteLine("Hello file!");
+writer.Close();
+StreamWriter writer = new StreamWriter(fileName, true); 
+// Adds text to an existing file without overwriting.
+------------------------------------
+// Replace text in a file.
+string str = File.ReadAllText("diary.txt");
+str = str.Replace("Dear diary.", "Dear mr Steve,");
+File.WriteAllText("diary.txt", str);
+------------------------------------
+if (!File.Exists(fileName)) {} // Check if a file exists.
+------------------------------------
+public Person(string name, int age) : this(name, age, 0, 0) {}
+------------------------------------
+dotnet run -p src/NewTypes/NewTypes.csproj
+------------------------------------
+------------------------------------
+------------------------------------
+
+Code Snippets C# II
+
+
+
+DateTime start = DateTime.Now;
+DateTime end = DateTime.Now;
+Console.WriteLine("Time elapsed: " + (end.Ticks - start.Ticks)/10000.0 + " milliseconds");
+------------------------------------
+string text = "Pride and Prejudice     ";
+text = text.ToLower(); // text currently "pride and prejudice     "
+text = text.Trim(); // text now "pride and prejudice"
+------------------------------------
+Console.WriteLine("Value = {0}", s);    //  Overloading. It's the same as:
+Console.WriteLine("Value = " + s);   // Which is the same as:
+Console.WriteLine($"Value = {s});     // String interpolation.     
+Console.Write("{0} is less than {1} " ,p ,p + 1);   // Another example.
+Conosle.WriteLine("Value = \"small\" + s");     // Quotes inside of quotes.
+Console.WriteLine("\t Start indented");      // To indent use \t
+------------------------------------
+this.readables.Clear();   // Empties a list
+------------------------------------
+// Casting
+TextMessage castMessage = (TextMessage)readable;
+Book comparedBook = (Book)compared;
+double example = (double)10 / 2;
+(int)pi = 3
+------------------------------------
+using System.Linq;  // Adds more options for lists
+int lastValueInLIst = list.Last();
+int minValueInList = list.Min();
+int sumOfObjectsPropertiesInList = list.Sum(item => item.amount)
+// ElementAt lets you go through dictionary keys and values using a for loop.
+for (int i = 0; i < this.dictionary.Count; i++)
+{
+    writer.WriteLine(this.dictionary[this.dictionary.Keys.ElementAt(i)]);
+}
+------------------------------------
+// Concatenates all strings in list to only one string.
+string joinAllStringsInListToOneString = String.Join(String.Empty, list)
+------------------------------------
+public string name { get; }    // In constructor,  { get; } allows retrieving from main
+------------------------------------
+using System.Text;   // Use StringBuilder
+   StringBuilder verbose = new StringBuilder();
+   verbose.Append("This string is added.");
+------------------------------------
+try
+{
+     int readNumber = Convert.ToInt32(Console.ReadLine());
+}
+catch (Exception error)
+{
+     Console.WriteLine("You failed! Input a number! " + error.Message);
+}
+------------------------------------
+if (!File.Exists(fileName))
+  {
+    throw new System.IO.FileNotFoundException();
+  }
+------------------------------------
+System.Threading.Thread.Sleep(3000);  // Sleep for 3 seconds.
+------------------------------------
+using static System.Console;
+using static System.Math;
+------------------------------------
+// Recursively print all nodes in a Binary Search Tree
+public void PrintAllNodesInBST()
+{
+   if (left != null)
+   {
+      left.PrintAllNodesInBST();
+   }
+   Console.WriteLine(this.value);
+   if (right != null)
+   {
+      right.PrintAllNodesInBST();
+   }
+}
+------------------------------------
+ int readNumber = Convert.ToInt32(Console.ReadLine());
+ int readNumber = int.Parse(Console.ReadLine());  // Same as above.
+------------------------------------
+// continue statement
+
+for (int i = 1; i <= 10; i++)
+            {
+                if (i < 7)
+                {
+                    continue;
+                }
+                Console.WriteLine(i);
+            }
+// prints 7 8 9 10
+------------------------------------
+------------------------------------
+------------------------------------
+
+
+
+Code Snippets C# III
+
+List<int>[] graph = new List<int>[n + 1]; // Create an array of lists containing integers. Used for graphs.
+------------------------------------
+public List<int> numbers = new List<int>();
+
+// is the same as...
+
+public List<int> list;
+
+public ClassName()
+{  
+      this.list = new List<int>();
+}
+------------------------------------
+// \r means the cursor goes back to the beginning of the line.
+for (int i = 0; i <= 100; i++)
+            {
+                Console.Write("\r[LOADING: {0}% ]", i);
+                Thread.Sleep(50);
+            }
+------------------------------------
+// Ternary operations
+int number = 3;
+bool isEven = (number % 2 == 0) ? true : false ;
+Console.WriteLine(isEven); // False
+
+// Another example
+int number = 3
+string sign = (number >= 0) ? "positive" : "negative";
+Console.WriteLine(sign); // positive
+------------------------------------
+// Switch statement
+int n = 1;
+switch (n)
+{
+         case 1:
+         Console.WriteLine("You chose 1");
+         break;
+
+         // Add more cases here
+
+         default:
+         Console.WriteLine("Error message!")
+         break;
+}
+------------------------------------
+// do-while loop
+int r = 1;
+do
+{
+        Console.WriteLine(r);
+        r++;
+} 
+while (r < 5);
+------------------------------------
+------------------------------------
+------------------------------------
+
+Code Snippets C# IV
+
+RegularExpressions
+
+using System.Text.RegularExpressions    // Use Regex
+
+Regex regex = new Regex("^01[0-9]{7}$");
+
+if(regex.IsMatch("011234567")) 
+{ 
+     Console.WriteLine("Correct format")
+}
+------------------------------------
+regextester.com
+------------------------------------
+Regex: ^ : Begin the match at the beginning of the line.
+Regex: $ : End the match at the end of the line
+------------------------------------
+trolo(lo|la) = trolo + lo OR la
+* = 0 to infinity of times
++ = 1 to infinity of times
+? = 0 or 1 times
+{a} = a times
+{a,b} = a to b times
+{a,} = a to infinity times
+^ = starts at the beginning of the string
+$ = ends at the end of the string
+5{3} = three fives = 555
+(1|0)* = 1 or 0, zero to infinity times
+[145] = (1|4|5)
+[2-36-9] = (2|3|6|7|8|9)
+[a-c]* = (a|b|c), 0 to infinity times
+------------------------------------
+
+Dictionaries
+
+Dictionary<string, string> postalCodes = new Dictionary<string, string>();
+postalCodes.Add("00710", "Helsinki");
+postalCodes.Add("90014", "Oulu");
+Console.WriteLine(postalCodes["00710"]);
+foreach (KeyValuePair<string, string> item in postalCodes)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);
+            }
+------------------------------------
+Book prideAndPredujice = new Book("Pride and Prejudice", 1813, "....");
+Dictionary<string, Book> directory = new Dictionary<string, Book>();
+directory.Add(senseAndSensibility.name, senseAndSensibility);
+------------------------------------
+Dictionary<string, string>.KeyCollection keyColl = this.dictionary.Keys;
+foreach( string item in keyColl )
+{
+    Console.WriteLine("Key = {0}", item);
+}
+------------------------------------
+Dictionary<string, string> phoneNumbers = new Dictionary<string, string>();
+phoneNumbers["Pekka"] = "040-12348765";    // Is the same as:
+phoneNumbers.Add("Pekka", "040-12348765");
+------------------------------------
+Dictionary<string, List<string>> phoneNumbers = new Dictionary<string, List<string>>();
+phoneNumbers["Pekka"] = new List<string>();
+phoneNumbers["Pekka"].Add("040-12348765");
+phoneNumbers["Pekka"].Add("09-111333");
+phoneNumbers["Pekka"].ForEach(Console.WriteLine);
+------------------------------------
+Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+
+public void Print()
+        {
+            Dictionary<string, List<int>>.KeyCollection keys = this.dict.Keys;
+
+            foreach (string name in keys)
+            {
+                foreach (int completed in this.dict[name])
+                {
+                    Console.WriteLine(name + ": " + completed);
+                }
+            }
+        }
+------------------------------------
+------------------------------------
+------------------------------------
+
+
+
+Testing C#
+
+dotnet new nunit
+dotnet add reference ../../src/NewTypes/NewTypes.csproj
+------------------------------------
+using NUnit.Framework;
+using Pets;
+
+public class PetTests
+{
+  [Test]
+  public void CatTalkToOwnerReturnsMeow()
+  {
+    string expected = "Meow!";
+    string actual = new Cat().TalkToOwner();
+
+    Assert.AreEqual(expected, actual);
+  }
+}
+------------------------------------
+[Test]
+    public void CalculatorInitialValueZero()
+    {
+      Calculator calculator = new Calculator();
+      Assert.AreEqual(0, calculator.value);
+    }
+------------------------------------
+using System.IO;
+StringReader reader = new StringReader(input);
+Console.SetIn(reader);
+------------------------------------
