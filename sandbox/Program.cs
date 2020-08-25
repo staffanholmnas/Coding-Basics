@@ -505,6 +505,112 @@ Grade grade = new Grade(5);
             }
         }
 
+// Adjaceny list. Namespace Graphs.
+
+            int n = 5;
+
+            List<int>[] graph = new List<int>[n + 1]; // Create an array of lists containing integers.
+
+            for (int i = 1; i <= n; i++)
+            {
+                graph[i] = new List<int>(); 
+            }      
+            graph[1].Add(2);
+            graph[1].Add(3);
+            graph[1].Add(4);
+            graph[2].Add(4);
+            graph[2].Add(5);
+            graph[3].Add(4);
+            graph[4].Add(5);
+
+            foreach (int i in graph[1])
+            {
+                Console.WriteLine(i);
+            }
+
+// Edge list. Namespace Graphs.
+
+            List<Edge> edges = new List<Edge>();
+
+            edges.Add(new Edge(1, 2));
+            edges.Add(new Edge(1, 3));
+            edges.Add(new Edge(1, 4));
+            edges.Add(new Edge(2, 4));
+            edges.Add(new Edge(2, 5));
+            edges.Add(new Edge(3, 4));
+            edges.Add(new Edge(4, 5));
+
+            Console.WriteLine(edges[4].end + "\n");
+
+// Adjacency matrix. Namespace Graphs.
+
+            int[,] mat = {{1,1,0,0,1},{0,0,1,1,0}};
+
+            Console.WriteLine(mat[1,4]); // [2nd row, 5th column]
+
+            int[,] matrix = new int[n + 1, n + 1];
+
+            matrix[1, 2] = 1;
+            matrix[1, 3] = 1;
+            matrix[1, 4] = 1;
+            matrix[2, 4] = 1;
+            matrix[2, 5] = 1;
+            matrix[3, 4] = 1;
+            matrix[4, 5] = 1;
+
+            Console.WriteLine(matrix[1, 2] + "\n");
+
+// BFS, Queue. Namespace Graphs.
+
+            Queue<string> numbers = new Queue<string>();
+            numbers.Enqueue("one");
+            numbers.Enqueue("two");
+            numbers.Enqueue("three");
+            numbers.Enqueue("four");
+            numbers.Enqueue("five");
+
+            foreach (string number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
+            Console.WriteLine("\nDequeuing '{0}'", numbers.Dequeue());
+            Console.WriteLine("Peek at next item to dequeue: {0}", numbers.Peek());
+            Console.WriteLine("Dequeuing '{0}'\n", numbers.Dequeue());
+            numbers.Enqueue("six");
+
+            foreach (string number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
+// GuiProject. Open a new winform project:
+
+            // Main:
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+
+            // Copy this to a file named Form1.cs:
+            using System.Windows.Forms;
+
+            namespace GuiProject
+            {
+                public partial class Form1 : Form
+                {
+                    private TextBox textBox1;
+                    private Button button1;
+                    private Button button2;
+                    public Form1()
+                    {
+                        InitializeComponent();
+                    }
+                }
+            }
+            // Remove comment out from Form1.Designer.cs.
+ 
+
 
 
 Main program ends. */
