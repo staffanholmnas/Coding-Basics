@@ -11,7 +11,9 @@ namespace sandbox
     {
         static void Main(string[] args)
         {
-            // Practise reading files.
+
+// Practise reading files.
+
             // This reads the content as one string.
             string text = File.ReadAllText("text.txt");
 
@@ -49,7 +51,8 @@ namespace sandbox
             }
             Console.WriteLine();
 
-            // Practice using classes and objects.
+// Practice using classes and objects.
+
             Person ada = new Person("Ada");
             Person antti = new Person("Antti");
             Person martin = new Person("Martin");
@@ -146,8 +149,8 @@ namespace sandbox
 
             Console.WriteLine("Pekka's and Antti's combined age " + combined + " years");
 
+// Classes exercise ends.
 
-            // Classes exercise ends.
             Console.WriteLine("");
             // Prints the time.
             System.DateTime moment = DateTime.Now;
@@ -164,7 +167,7 @@ namespace sandbox
             Console.WriteLine();
 
 
-            // Part 8 - Dictionaries
+// Part 8 - Dictionaries
 
             Dictionary<string, string> postalCodes = new Dictionary<string, string>();
             Dictionary<string, int> dict = new Dictionary<string, int>();
@@ -231,109 +234,111 @@ namespace sandbox
             /* Comment out printing using methods and lists.
 
 // Print Stars in different patterns.
-PrintStars(5);
-PrintStars(3);
-PrintStars(9);
-PrintSquare(4);
-PrintRectangle(17, 3);
-PrintTriangle(4);
-PrintRightTriangle(4);
+            PrintStars(5);
+            PrintStars(3);
+            PrintStars(9);
+            PrintSquare(4);
+            PrintRectangle(17, 3);
+            PrintTriangle(4);
+            PrintRightTriangle(4);
 
-Console.WriteLine("");
+            Console.WriteLine("");
 
 // Adds a list of names and prints them.
-List<string> list = new List<string>();
+            List<string> list = new List<string>();
 
-list.Add("Tom");
-list.Add("Steve");
-list.Add("lake");
-list.Add("Agaton");
+            list.Add("Tom");
+            list.Add("Steve");
+            list.Add("lake");
+            list.Add("Agaton");
 
-list.RemoveAt(3);
-list.ForEach(Console.WriteLine);
-Console.WriteLine("");
+            list.RemoveAt(3);
+            list.ForEach(Console.WriteLine);
+            Console.WriteLine("");
 
 // Adds a list of numbers and prints them. 
-List<double> matrix = new List<double>();
+            List<double> matrix = new List<double>();
 
-matrix.Add(2.5);
-matrix.Add(1);
-matrix.Add(5.34);
-matrix.Add(7);
+            matrix.Add(2.5);
+            matrix.Add(1);
+            matrix.Add(5.34);
+            matrix.Add(7);
 
-for (int i = 0; i < matrix.Count; i++)
-{
-Console.WriteLine(matrix[i]);
+            for (int i = 0; i < matrix.Count; i++)
+            {
+            Console.WriteLine(matrix[i]);
 
-}
+            }
 
-if (matrix.Contains(7)) // Checks for a number 7 in the list of values.
-{
-Console.WriteLine("This list has a 7");
-}
+            if (matrix.Contains(7)) // Checks for a number 7 in the list of values.
+            {
+            Console.WriteLine("This list has a 7");
+            }
 
-Console.WriteLine("The sum is:");
+            Console.WriteLine("The sum is:");
 
-double sum = 0;
-foreach (double item in matrix) // Adds all values in the list and prints the sum.
-{
-sum = item + sum;
-}
-Console.WriteLine(sum);
-Console.WriteLine("");
+            double sum = 0;
+            foreach (double item in matrix) // Adds all values in the list and prints the sum.
+            {
+            sum = item + sum;
+            }
+            Console.WriteLine(sum);
+            Console.WriteLine("");
+
 // Adds an array and some elements.
 
-int[] values = new int[4];
+            int[] values = new int[4];
 
-values[0] = 2;
-values[1] = 0;
-values[2] = 2;
-values[3] = 0;
+            values[0] = 2;
+            values[1] = 0;
+            values[2] = 2;
+            values[3] = 0;
 
-foreach (int print in values)
-{
-Console.Write(print);
-}
-Console.WriteLine("");
+            foreach (int print in values)
+            {
+            Console.Write(print);
+            }
+            Console.WriteLine("");
+
 // Adds a new array with 4 elements and values.
-int[] array = { 1, 9, 8, 1 };
+            int[] array = { 1, 9, 8, 1 };
 
-// Can't add more values to the array because it was created with 4 elements.
+            // Can't add more values to the array because it was created with 4 elements.
 
-for (int i = 0; i < array.Length; i++)
-{
-Console.Write(array[i]);
-}
+            for (int i = 0; i < array.Length; i++)
+            {
+            Console.Write(array[i]);
+            }
 
+// List of sorted inputs.
+            List<int> listOfAges = new List<int>(); // Creates a new list.
 
-List<int> listOfAges = new List<int>(); // Creates a new list.
+            int age = 0; // Declares an integer called age that is needed later.
 
-int age = 0; // Declares an integer called age that is needed later.
+            Console.WriteLine("");
+            Console.WriteLine("Please enter a name, and age (name,age):");
+            Console.WriteLine("Empty line quits.");
 
-Console.WriteLine("");
-Console.WriteLine("Please enter a name, and age (name,age):");
-Console.WriteLine("Empty line quits.");
+            while (true) // A loop that asks for inputs until an empty line is entered.
+            {
+            string input = Console.ReadLine();
 
-while (true) // A loop that asks for inputs until an empty line is entered.
-{
-string input = Console.ReadLine();
+            if (input == "")
+            {
+            break;
+            }
 
-if (input == "")
-{
-break;
-}
+            string[] parts = input.Split(","); // Splits the input strings at every comma, each part stored in the array. 
 
-string[] parts = input.Split(","); // Splits the input strings at every comma, each part stored in the array. 
+            age = Convert.ToInt32(parts[1]); // Converts the second string entered to an integer stored in the variable age.
 
-age = Convert.ToInt32(parts[1]); // Converts the second string entered to an integer stored in the variable age.
+            listOfAges.Add(age); // Adds the integer to the list.
 
-listOfAges.Add(age); // Adds the integer to the list.
+            }
 
-}
+            int oldest = OldestAge(listOfAges); // Calls the method OldestAge that searches the list for the largest value. Stores the largest value in oldest.
 
-int oldest = OldestAge(listOfAges); // Calls the method OldestAge that searches the list for the largest value. Stores the largest value in oldest.
-
-Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
+            Console.WriteLine("Age of the oldest: " + oldest); // Prints the oldest person in the list.
 
 
 // Abstract_Class
@@ -610,6 +615,79 @@ Grade grade = new Grade(5);
             }
             // Remove comment out from Form1.Designer.cs.
  
+
+// IComparable
+
+            // List of Members
+            List<Member> member = new List<Member>();
+            // Add three regular members
+            member.Add(new Member("mikael", 182));
+            member.Add(new Member("matti", 187));
+            member.Add(new Member("ada", 184));
+            // Add null to show the sorting of null
+            member.Add(null);
+
+            // Print each member
+            member.ForEach(Console.WriteLine);
+
+            Console.WriteLine("Let's sort the members:");
+
+            // Sort the list
+            member.Sort();
+
+            // Print each member
+            member.ForEach(Console.WriteLine);
+
+// Inheritance_2
+
+            Student ollie = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
+            Console.WriteLine(ollie);
+            Person olliePerson = new Person("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
+            Console.WriteLine(olliePerson);
+            Object ollieObject = new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028");
+            Console.WriteLine(ollieObject);
+            Object alice = new Student("Alice", "177 Stewart Ave. Farmington, ME 04938");
+            Object steve = new object();
+            Console.WriteLine(alice);
+            ollie.Study();
+            ollie.Study();
+            Console.WriteLine(ollie);
+            Console.WriteLine(steve);
+
+// Inheritance_3
+
+            List<Point> points = new List<Point>();
+            points.Add(new Point(-4, 8));
+            points.Add(new ColorPoint(1, 1, "green"));
+            points.Add(new ColorPoint(2, 5, "blue"));
+            points.Add(new Point3D(5, 2, 8));
+            points.Add(new Point(0, 0));
+
+            Console.WriteLine(points[2].ManhattanDistanceFromOrigin());
+            Console.WriteLine(points[3]);
+            Console.WriteLine();
+
+            foreach (Point p in points)
+            {
+                Console.WriteLine(p);
+            }
+
+// Interfaces_2
+
+            Books book1 = new Books("Fedor Dostojevski", "Crime and Punishment", 2);
+            Books book2 = new Books("Robert Martin", "Clean Code", 1);
+            Books book3 = new Books("Kent Beck", "Test Driven Development", 0.5);
+
+            CD cd1 = new CD("Pink Floyd", "Dark Side of the Moon", 1973);
+            CD cd2 = new CD("Wigwam", "Nuclear Nightclub", 1975);
+            CD cd3 = new CD("Rendezvous Park", "Closer to Being Here", 2012);
+
+            Console.WriteLine(book1);
+            Console.WriteLine(book2);
+            Console.WriteLine(book3);
+            Console.WriteLine(cd1);
+            Console.WriteLine(cd2);
+            Console.WriteLine(cd3);
 
 
 
