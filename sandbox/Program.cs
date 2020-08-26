@@ -689,6 +689,323 @@ Grade grade = new Grade(5);
             Console.WriteLine(cd2);
             Console.WriteLine(cd3);
 
+// LinkedList
+
+            Node n1 = new Node(3, null, null);
+            Node n2 = new Node(7, null, n1);
+            Node n3 = new Node(2, null, n2);
+            Node n4 = new Node(5, null, n3);
+
+            n1.next = n2;
+            n2.next = n3;
+            n3.next = n4;
+
+            Node n = n1;
+            while (n != null)
+            {
+                Console.WriteLine(n.value);
+                n = n.next;
+            }
+
+// ListInDictionary
+
+            Node n1 = new Node(3, null, null);
+            Node n2 = new Node(7, null, n1);
+            Node n3 = new Node(2, null, n2);
+            Node n4 = new Node(5, null, n3);
+
+            n1.next = n2;
+            n2.next = n3;
+            n3.next = n4;
+
+            Node n = n1;
+            while (n != null)
+            {
+                Console.WriteLine(n.value);
+                n = n.next;
+            }
+
+// Namespaces
+
+            // Displays "ExampleMethod in OuterNamespace."
+            Example outer = new Example();
+            outer.ExampleMethod();
+
+            // Displays "ExampleMethod in InnerNamespace."
+            OuterNamespace.InnerNamespace.Example inner = new OuterNamespace.InnerNamespace.Example();
+            inner.ExampleMethod();
+
+            using (StringWriter sw = new StringWriter())
+            {
+                // Object will only exist inside this block.
+            }
+
+// Randomizer
+
+            WeatherMan forecaster = new WeatherMan();
+
+            // save days of the week to a list
+            List<string> days = new List<string>();
+            days.Add("Mon");
+            days.Add("Tue");
+            days.Add("Wed");
+            days.Add("Thu");
+            days.Add("Fri");
+            days.Add("Sat");
+            days.Add("Sun");
+
+            Console.WriteLine("Next week's weather forecast:");
+
+            foreach (string day in days)
+            {
+                string weatherForecast = forecaster.Forecast();
+
+                Console.WriteLine(day + ": " + weatherForecast);
+            }
+
+// Recursion1
+
+            // Hello(5);
+            // Console.WriteLine(ReturnZero(6));
+            // Test(4);
+            // Console.WriteLine("----------");
+            // TestReturn(4);
+            // Console.WriteLine("----------");
+            // Console.WriteLine(Sum(10));
+            // Console.WriteLine("----------");
+            // Console.WriteLine(Factorial(4));
+            // Console.WriteLine("----------");
+            // Console.WriteLine(Reverse("Greetings!"));
+            // Recurse(3);
+            Console.WriteLine();
+            int[] a = new int[] { 0, 1, 2, 3, 4, 5 };
+            int n = 0;
+            PrintArray(a, n);
+            Console.WriteLine("----------");
+            Console.WriteLine(Palindrome("rotator"));
+            Console.WriteLine("----------");
+            int number = 4;
+            int exponent = 7;
+            int sum = 1;
+            Console.WriteLine(Power(number, exponent, sum));
+            Console.WriteLine("----------");
+            for (int i = 1; i <= 15; i++)
+            {
+                Console.WriteLine(Fibonacci(i));
+            }
+
+// RegularExpressions
+
+            // trolo(lo|la) = trolo + lo OR la
+            // * = 0 to infinity of times
+            // + = 1 to infinity of times
+            // ? = 0 or 1 times
+            // {a} = a times
+            // {a,b} = a to b times
+            // {a,} = a to infinity times
+            // ^ = starts at the beginning of the string
+            // $ = ends at the end of the string
+
+            Regex trololo = new Regex("^trolo(lo|la){2,3}$");
+            string trolo = "trololala";
+
+            if (trololo.IsMatch(trolo))
+            {
+                Console.WriteLine("Correct form.");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect form.");
+            }
+
+            // 5{3} = three fives = 555
+            // (1|0)* = 1 or 0, zero to infinity times
+
+            Regex fives = new Regex("^5{3}(1|0)*5{3}$");
+            string five = "5550101011101010555";
+
+            if (fives.IsMatch(five))
+            {
+                Console.WriteLine("Correct form.");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect form.");
+            }
+
+            // [145] = (1|4|5)
+            // [2-36-9] = (2|3|6|7|8|9)
+            // [a-c]* = (a|b|c), 0 to infinity times
+
+            Regex regex = new Regex("^[145][2-36-9][a-c]*$");
+            string str = "19abcba";
+
+            if (regex.IsMatch(str))
+            {
+                Console.WriteLine("Correct form.");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect form.");
+            }
+
+// StreamReader
+
+            // Create a new storer that can create files and add text to them.
+            Storer storer = new Storer();
+
+            storer.WriteToFile("file.txt", "\nThis is the very first text to be added:\n"); // This line will be deleted by the next StreamWriter.
+
+
+            // Create new file and add text.
+            StreamWriter writer = new StreamWriter("file.txt");
+            writer.WriteLine("Hello!");
+            writer.WriteLine("This is a new file.");
+            writer.WriteLine("Adding another line.");
+            writer.WriteLine("Bye!");
+            writer.Close();
+
+            // Add text to file.
+            StreamWriter addText = new StreamWriter("file.txt", true);
+            addText.WriteLine("Hello again, adding text!");
+            addText.WriteLine("Add a last line.");
+            addText.Write("Bye!");
+            addText.Close();
+
+            // Add text to the same file.
+            storer.WriteToFile("file.txt", "\nThis is the very last text to be added.\n");
+            storer.WriteToFile("file.txt", "\nThis is the very last text to be added.\n");
+            storer.WriteToFile("file.txt", "Poop");
+
+            // Create new file.
+
+            StreamWriter newWriter = new StreamWriter("newfile.txt");
+            newWriter.WriteLine("Hi!");
+            newWriter.Close();
+            Storer newStorer = new Storer();
+            newStorer.WriteToFile("newfile.txt", "Bye!");
+
+            // Replace the text in a file.
+            string str = File.ReadAllText("newfile.txt");
+            str = str.Replace("Bye!", "Take care!");
+            File.WriteAllText("newfile.txt", str);
+
+            // Going through a larger file and replacing sentences.
+            string diary = "file.txt";
+            string[] lines = File.ReadAllLines(diary);
+            StreamWriter sw = new StreamWriter(diary);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+                if (lines[i].Contains("Hello"))
+                {
+                    line = "Good evening!";
+                }
+                sw.WriteLine(line);
+            }
+            sw.Close();
+
+// StringBuilder
+
+            StringBuilder numbers = new StringBuilder();
+            numbers.Append("This string");
+            numbers.Append(", this string as well.");
+            numbers.Append(" How about 1 more string.");
+            Console.WriteLine(numbers.ToString());
+            Console.WriteLine();
+
+// StringReader
+
+            string input = "one\n" + "two\n" +
+                            "three\n" + "four\n" +
+                            "five\n" + "one\n" +
+                            "six\n";
+            StringReader reader = new StringReader(input);
+            Console.WriteLine(input);
+
+            List<string> read = new List<string>();
+
+            while (true)
+            {
+                Console.WriteLine("Enter an input: ");
+                // Redirect the console input to the reader
+                Console.SetIn(reader);
+                // It is now in memory and will be given to the ReadLine
+                // Every linebreak "\n" starts a new line
+                // giving the ReadLine six inputs
+                string line = Console.ReadLine();
+                if (read.Contains(line))
+                {
+                    break;
+                }
+
+                read.Add(line);
+            }
+
+            Console.WriteLine("Thank you!");
+
+            if (read.Contains("six"))
+            {
+                Console.WriteLine("A value that should not have been added to the group was added to it.");
+            }
+
+// Switch
+
+            string message = "Give a number 1-3!";
+            string error = "Not a valid number!";
+            Console.WriteLine(message);
+            int n = Convert.ToInt32(Console.ReadLine());
+            
+            switch (n)
+            {
+                case 1:
+                Console.WriteLine("You chose 1");
+                break;
+                case 2:
+                Console.WriteLine("You chose 2");
+                break;
+                case 3:
+                Console.WriteLine("You chose 3");
+                break;
+                default:
+                Console.WriteLine(error);
+                break;
+            }
+
+// Ternary
+
+            // Ternary operations (condition ? yes : no)
+            int input = new Random().Next(-5, 5);
+
+            string sign;
+            if (input >= 0)
+            {
+                sign = "positive";
+            }
+            else
+            {
+                sign = "negative";
+            }
+            // Is the same as
+            string sign = (input >= 0) ? "positive" : "negative";
+            Console.WriteLine(sign);
+
+            // Another example
+
+            int number = 3;
+
+            bool isEven;
+            if (number % 2 == 0)
+            {
+                isEven = true;
+            }
+            else
+            {
+                isEven = false;
+            }
+            //  Is the same as
+            bool isEven = (number % 2 == 0) ? true : false;
+            Console.WriteLine(isEven); // False
 
 
 Main program ends. */
@@ -778,6 +1095,104 @@ Main program ends. */
             list = new List<string>(lines);  // Casting
 
             return list;
+        }
+
+    public static void Hello(int n)
+        {
+            if (n == 0)
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Hello!");
+                Hello(n - 1);
+            }
+        }
+        public static int ReturnZero(int n)
+        {
+            if (n == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return ReturnZero(n - 1);
+            }
+        }
+
+        static void Test(int n)
+        {
+            Console.Write(n + " ");
+            if (n == 1)
+            {
+                return;
+            }
+
+            Test(n - 1);   
+            Test(n - 1);  
+        }
+        static int TestReturn(int n)
+        {
+            Console.Write(n + " ");
+            if (n == 1) return n;
+            TestReturn(n - 1);
+            return TestReturn(n - 1);
+        }
+
+        static long Sum(int n)
+        {
+            if (n == 0) return 0;
+            else return Sum(n - 1) + n;
+        }
+
+        static int Factorial(int n)
+        {
+            if (n == 1) return 1;
+            return n * Factorial(n - 1);
+        }
+
+        static void Recurse(int n)
+        {
+            Console.WriteLine(n);
+            if (n > 0) Recurse(n -1);
+            Console.WriteLine(n);
+        }
+        static string Reverse(string n)
+        {
+            if (n.Length < 2) return n;
+            return Reverse(n.Substring(1, n.Length - 1)) + n[0];
+        }
+        static int[] PrintArray(int[] a, int n)
+        {
+            if (n == a.Length) return a;
+            Console.WriteLine(a[n]);
+            return PrintArray(a, n + 1);
+        }
+        static bool Palindrome(string n)
+        {
+            if (n.Length == 1) return true;
+            if (n[0] == n[n.Length - 1])
+            {
+                n = n.Substring(1);
+                n = n.Remove(n.Length - 1);
+                return Palindrome(n);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        static int Power(int a, int b, int sum)
+        {
+            if (b == 0) return sum;
+            sum = sum * a;
+            return Power(a, b - 1, sum);
+        }
+        static int Fibonacci(int a)
+        {
+            if (a <= 1) return a;
+            return Fibonacci(a - 1) + Fibonacci(a - 2);
         }
 
     */
